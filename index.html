@@ -1,613 +1,208 @@
-diff --git a/all-in-one.html b/all-in-one.html
-new file mode 100644
-index 0000000000000000000000000000000000000000..52b9625af2a872a0f1263c3958b5559f40ec2de6
---- /dev/null
-+++ b/all-in-one.html
-@@ -0,0 +1,607 @@
-+<!DOCTYPE html>
-+<html lang="en">
-+<head>
-+  <meta charset="UTF-8" />
-+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-+  <title>Duraclean Solutions | Luxury Cleaning Services in Durban</title>
-+  <meta name="description" content="Duraclean Solutions delivers premium residential and commercial cleaning in Durban, Umhlanga, Pinetown, and Chatsworth." />
-+  <link rel="preconnect" href="https://fonts.googleapis.com" />
-+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Parisienne&display=swap" rel="stylesheet" />
-+  <style>
-+:root {
-+  --bg: #090b10; --text: #f4f2ee; --muted: #d0c7bb; --glass: rgba(20,17,15,.46); --line: rgba(255,255,255,.2); --gold: #d9b278; --gold-2: #b48a53;
-+}
-+* { box-sizing: border-box; }
-+html { scroll-behavior: smooth; }
-+body { margin: 0; background: radial-gradient(circle at 20% 0%, #382619 0%, #120f0c 36%, var(--bg) 100%); color: var(--text); font-family: Inter, sans-serif; overflow-x: hidden; }
-+.noise { position: fixed; inset: 0; pointer-events: none; opacity: .08; background-image: radial-gradient(#fff .5px, transparent .5px); background-size: 3px 3px; }
-+.container { width: min(1160px, 92%); margin: 0 auto; position: relative; z-index: 2; }
-+.glass { background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(0,0,0,.28); }
-+.hero { min-height: 95vh; position: relative; display: grid; align-items: start; padding: 1.2rem 0 4rem; }
-+.hero::before { content:""; position: absolute; inset: -30px 0; background: inherit; transform: translateY(calc(var(--parallax-y,0px) * -1)); }
-+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(90%) brightness(55%); transform: translateY(calc(var(--parallax-y,0px) * .3)); }
-+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(0,0,0,.7), rgba(72,38,17,.35)); }
-+.nav { display: flex; justify-content: space-between; align-items: center; padding: .8rem 1.2rem; border-radius: 999px; margin-top: .4rem; }
-+.logo { font-family: Manrope, sans-serif; font-size: 1.15rem; letter-spacing: .8px; }
-+.logo span { color: var(--gold); font-style: italic; font-family: 'Playfair Display', serif; }
-+.menu-toggle { display: none; width: 46px; height: 42px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.06); cursor: pointer; }
-+.menu-toggle span { display:block; width:22px; height:2px; background:#fff; margin:7px auto; transition:.3s; }
-+.nav-links { display: flex; gap: 1.2rem; align-items: center; }
-+.nav-links a { color: var(--text); text-decoration: none; font-size: .95rem; }
-+.hero-content { padding-top: 15vh; max-width: 760px; }
-+.eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: .74rem; color: #e5d0af; }
-+h1 { font-family: Manrope, sans-serif; font-size: clamp(2.4rem, 7vw, 6rem); line-height: .95; margin: .4rem 0; font-weight: 500; }
-+h1 em { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold); font-weight: 600; }
-+.signature { font-family: Parisienne, cursive; font-size: clamp(1.3rem, 3vw, 2rem); color: #f0d7b0; margin: .2rem 0 1rem; }
-+.subtitle { color: var(--muted); max-width: 620px; font-size: 1.05rem; }
-+.hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.4rem; }
-+.btn { padding: .82rem 1.3rem; border-radius: 999px; text-decoration: none; font-weight: 600; display: inline-block; }
-+.btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-2)); color: #1b130d; }
-+.btn-outline, .btn-ghost { border: 1px solid var(--line); color: var(--text); }
-+.trustbar { margin-top: -2.2rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:.8rem; }
-+.trustbar article { padding:1rem; border-radius:16px; background:rgba(255,255,255,.04); border:1px solid var(--line); }
-+.trustbar strong { color: var(--gold); font-size: 1.1rem; }
-+.trustbar p { margin:.3rem 0 0; color: var(--muted); }
-+.section { padding: 5rem 0; }
-+.section-heading h2 { font-family: Manrope, sans-serif; font-size: clamp(1.7rem, 4vw, 3rem); margin-top: .4rem; }
-+.cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1rem; }
-+.card { border-radius: 18px; padding: 1.2rem; transition: transform .35s ease, border-color .35s ease; }
-+.card:hover { transform: translateY(-7px); border-color: rgba(217,178,120,.55); }
-+.icon-wrap { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(217,178,120,.15); margin-bottom: .6rem; }
-+.icon-wrap svg { width: 24px; height: 24px; stroke: #e8c38e; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-+.visual-band { position: relative; overflow: hidden; }
-+.visual-band > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(36%); transform: translateY(calc(var(--parallax-y,0px) * .2)); }
-+.visual-band .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(9,11,16,.45), rgba(9,11,16,.9)); }
-+.ba-slider { position: relative; border-radius: 18px; overflow: hidden; }
-+.ba-slider img { display:block; width:100%; height:min(60vw,460px); object-fit:cover; }
-+.before-wrap { position:absolute; inset:0 auto 0 0; overflow:hidden; }
-+.ba-range { position:absolute; inset:auto 1rem 1rem 1rem; width:calc(100% - 2rem); }
-+.ba-label { position:absolute; top:12px; padding:.3rem .6rem; font-size:.8rem; background:rgba(0,0,0,.5); border-radius:999px; }
-+.ba-label.before { left:12px; } .ba-label.after { right:12px; }
-+.testimonials { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1rem; }
-+.testimonials article { padding:1.2rem; border-radius:18px; }
-+.testimonials p { color: var(--muted); }
-+.pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
-+.pricing-grid article { border-radius:18px; padding:1.2rem; }
-+.pricing-grid .featured { border-color: rgba(217,178,120,.65); transform: translateY(-6px); }
-+.pricing-grid ul { padding-left: 1rem; color: var(--muted); }
-+.footer { padding: 3rem 0; background: rgba(9,11,16,.98); }
-+.footer-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); }
-+.footer p { color: var(--muted); }
-+.whatsapp-float { position: fixed; right: 18px; bottom: 18px; z-index: 99; background: #25d366; color:#042b12; border-radius:999px; padding:.6rem .9rem; display:flex; gap:.45rem; align-items:center; text-decoration:none; font-weight:700; box-shadow: 0 12px 25px rgba(0,0,0,.35); }
-+.whatsapp-float svg { width:20px; height:20px; fill: currentColor; }
-+.reveal { opacity: 0; transform: translateY(20px); animation: fadeUp .9s ease forwards; }
-+.delay-1 { animation-delay: .15s; } .delay-2 { animation-delay: .3s; } .delay-3 { animation-delay: .45s; }
-+@keyframes fadeUp { to { opacity: 1; transform: translateY(0);} }
-+@media (max-width: 860px) {
-+  .menu-toggle { display: block; }
-+  .nav { border-radius: 18px; position: relative; }
-+  .nav-links { position: absolute; top: calc(100% + 10px); right: 0; min-width: 210px; display: grid; gap: .6rem; padding: .8rem; border-radius: 14px; background: rgba(10,10,10,.92); border:1px solid var(--line); transform-origin: top right; transform: scale(.95); opacity: 0; pointer-events: none; transition: .28s; }
-+  .nav-links.open { transform: scale(1); opacity: 1; pointer-events: auto; }
-+  .hero-content { padding-top: 10vh; }
-+}
-+.ba-thumbs { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1rem; margin-top: 1rem; }
-+.ba-thumbs figure { margin: 0; border-radius: 18px; overflow: hidden; }
-+.ba-thumbs img { display: block; width: 100%; height: 210px; object-fit: cover; }
-+.ba-thumbs figcaption { padding: .85rem 1rem; color: var(--muted); }
-+.social-panel { padding: 1rem; border-radius: 18px; }
-+.social-panel a { color: #f0d7b0; }
-+.site-feed { display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap: .8rem; margin-top: 1rem; }
-+.site-feed article { border: 1px solid var(--line); border-radius: 14px; padding: .8rem; background: rgba(255,255,255,.05); }
-+.site-feed img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: .6rem; }
-+.feed-empty { color: var(--muted); margin-bottom: 0; }
-+@media (prefers-reduced-motion: reduce) {
-+  html { scroll-behavior: auto; }
-+  .reveal { opacity: 1; transform: none; animation: none; }
-+  .card:hover, .pricing-grid .featured { transform: none; }
-+}
-+
-+.plain-download { color: inherit; text-decoration: underline; font-weight: 500; }
-+.social-panel a.plain-download, .footer a.plain-download { color: inherit; }
-+.download-row { margin-top: .65rem; }
-+
-+
-+/* All-in-one admin and guide styles */
-+.admin-studio .admin-wrap{max-width:980px;margin:0 auto}
-+.admin-studio .admin-card{background:rgba(27,27,27,.82);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:14px}
-+.admin-studio input,.admin-studio textarea,.admin-studio select{width:100%;padding:11px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#0f0f0f;color:#fff;margin-top:8px}
-+.admin-studio label{display:block;margin:.7rem 0}
-+.admin-studio .hint{color:var(--muted)}
-+.admin-studio button,.admin-studio .button{border:0;background:var(--gold);color:#18120b;padding:10px 14px;border-radius:999px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
-+.admin-studio .danger{background:#442222;color:#ffd4d4;border:1px solid #714040}
-+.admin-studio .admin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-+.admin-studio .hidden{display:none}
-+.admin-studio .admin-post{border-top:1px solid rgba(255,255,255,.14);padding-top:12px;margin-top:12px}
-+.admin-studio .admin-post img{width:100%;max-height:220px;object-fit:cover;border-radius:14px;margin:.6rem 0}
-+.admin-studio .actions{display:flex;gap:.6rem;flex-wrap:wrap}
-+.admin-studio .topbar{display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
-+.setup-guide{max-height:520px;overflow:auto;white-space:pre-wrap;background:rgba(0,0,0,.45);border:1px solid var(--line);border-radius:16px;padding:1rem;color:var(--muted)}
-+  </style>
-+</head>
-+<body>
-+  <div class="noise"></div>
-+
-+  <a class="whatsapp-float" href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20cleaning%20quote." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.26c-.27-.13-1.6-.79-1.85-.88-.25-.1-.43-.13-.61.13-.18.26-.7.88-.85 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.31-.79-.7-1.33-1.57-1.49-1.83-.16-.26-.02-.4.12-.53.12-.12.27-.31.4-.46.13-.16.18-.26.27-.43.09-.18.04-.33-.02-.46-.07-.13-.61-1.46-.84-2-.22-.52-.45-.45-.61-.46h-.52c-.18 0-.46.07-.7.33-.24.26-.91.89-.91 2.16 0 1.28.93 2.51 1.06 2.68.13.18 1.82 2.78 4.41 3.89.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.12-.25-.18-.52-.31Z"/><path d="M16 3C8.84 3 3 8.84 3 16c0 2.29.6 4.51 1.75 6.47L3 29l6.72-1.72A12.94 12.94 0 0 0 16 29c7.16 0 13-5.84 13-13S23.16 3 16 3Zm0 23.67c-2.04 0-3.95-.6-5.55-1.64l-.4-.26-3.99 1.02 1.06-3.89-.26-.4A10.59 10.59 0 0 1 5.33 16c0-5.88 4.79-10.67 10.67-10.67S26.67 10.12 26.67 16 21.88 26.67 16 26.67Z"/></svg>
-+    <span>WhatsApp</span>
-+  </a>
-+
-+  <header class="hero" data-parallax="0.25">
-+    <img class="hero-bg" src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=2000&q=80" alt="Professional South African cleaning team preparing a luxury living space" />
-+    <div class="hero-overlay"></div>
-+
-+    <nav class="nav container glass reveal">
-+      <div class="logo">Duraclean <span>Solutions</span></div>
-+      <button class="menu-toggle" aria-expanded="false" aria-controls="menuPanel" aria-label="Open menu"><span></span><span></span></button>
-+      <div id="menuPanel" class="nav-links">
-+        <a href="#services">Services</a>
-+        <a href="#proof">Results</a>
-+        <a href="#pricing">Pricing</a>
-+        <a href="#contact" class="btn btn-outline">Book Now</a>
-+      </div>
-+    </nav>
-+
-+    <div class="hero-content container reveal delay-1">
-+      <p class="eyebrow">Durban • Umhlanga • Pinetown • Chatsworth</p>
-+      <h1>Where Precision <em>Meets</em> Calm.</h1>
-+      <p class="signature">crafted care for homes & workspaces</p>
-+      <p class="subtitle">A premium, reliable cleaning experience for residences and businesses—with eco-safe products, punctual teams, and uncompromising detail.</p>
-+      <div class="hero-actions">
-+        <a href="#pricing" class="btn btn-gold">Get Instant Quote Guide</a>
-+        <a href="#proof" class="btn btn-ghost">See Real Results</a>
-+      </div>
-+    </div>
-+  </header>
-+
-+  <main>
-+    <section class="trustbar container reveal">
-+      <article><strong>48h</strong><p>Quick booking turnaround</p></article>
-+      <article><strong>Eco-Safe</strong><p>Family and workspace friendly products</p></article>
-+      <article><strong>Checklist QA</strong><p>Supervisor quality verification</p></article>
-+      <article><strong>Insured Team</strong><p>Reliable, vetted professionals</p></article>
-+    </section>
-+
-+    <section id="services" class="section container">
-+      <div class="section-heading reveal">
-+        <p class="eyebrow">Signature Services</p>
-+        <h2>Elevated Cleaning for Every Environment</h2>
-+        <p class="subtitle">Commercial/Industrial • Deep Cleaning • Pavement Cleaning • Garden Refuse Removal • Grass Cutting • Move In/Out • Pre/Post Event.</p>
-+      </div>
-+      <div class="cards">
-+        <article class="card glass reveal delay-1"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22h16M6 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17"/></svg></div><h3>Commercial / Industrial Cleaning</h3><p>Professional cleaning for offices, stores, warehouses, and industrial workspaces.</p></article>
-+        <article class="card glass reveal delay-2"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></div><h3>Deep Cleaning</h3><p>Detailed top-to-bottom cleaning for kitchens, bathrooms, living spaces, and high-touch areas.</p></article>
-+        <article class="card glass reveal delay-3"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 16l2-8h8l2 8M9 8V5h6v3"/></svg></div><h3>Pavement Cleaning</h3><p>Exterior pavement washing and stain removal to restore a clean, welcoming entrance.</p></article>
-+        <article class="card glass reveal delay-1"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14M7 20V9l5-4 5 4v11M10 20v-5h4v5"/></svg></div><h3>Move In / Move Out Tenant Cleaning</h3><p>Full property reset for tenants and landlords before handover or occupancy.</p></article>
-+        <article class="card glass reveal delay-2"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19c4-2 5-7 8-10 2 2 3 5 8 6-3 1-5 4-8 7-3-2-5-2-8-3z"/></svg></div><h3>Garden Refuse Collection & Removal</h3><p>Bagging, loading, and responsible removal of grass cuttings, branches, and garden waste.</p></article>
-+        <article class="card glass reveal delay-3"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h14M6 16h12M8 12h8M9 8h6"/></svg></div><h3>Grass Cutting</h3><p>Routine lawn cutting and edging to keep residential and business gardens neat.</p></article>
-+        <article class="card glass reveal delay-1"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg></div><h3>Pre / Post Event Cleaning</h3><p>Venue setup refresh before events and rapid, thorough cleanup once events are done.</p></article>
-+      </div>
-+    </section>
-+
-+    <section id="proof" class="section visual-band" data-parallax="0.18">
-+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPkFmdGVyIHBvc3QtY29uc3RydWN0aW9uIGNsZWFudXA8L3RpdGxlPgogIDxkZXNjIGlkPSJkZXNjIj5BIER1cmJhbiBoaWxsc2lkZSBob21lIGV4dGVyaW9yIGFmdGVyIGNsZWFuaW5nLCB3aXRoIGEgY2xlYXIgcGF0aW8sIHNwb3RsZXNzIHBhdmluZywgYW5kIHN1bnNldCBzZWEgdmlldy48L2Rlc2M+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTFhNCIvPjxzdG9wIG9mZnNldD0iLjQyIiBzdG9wLWNvbG9yPSIjZjI4YTNjIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYmFjN2QzIi8+PC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0id2FsbCIgeDE9IjAiIHgyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNjNGJiYjIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2ZTZiNmQiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJwYXZpbmciIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNkN2QxYzgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNhNjlkOTMiLz48L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxjaXJjbGUgY3g9IjE0NSIgY3k9IjM2NSIgcj0iNjgiIGZpbGw9IiNmZmQ1NmYiIG9wYWNpdHk9Ii45NiIvPgogIDxwYXRoIGQ9Ik0wIDUzMCBDMjYwIDQ3MCA0MzAgNTYwIDY1MCA1MTAgQzgxMCA0NzUgOTIwIDUxNSAxMDgwIDQ4MCBDMTIzMCA0NTAgMTQwMCA1MDUgMTYwMCA0NzAgTDE2MDAgOTAwIEwwIDkwMCBaIiBmaWxsPSIjNjU3MTgwIiBvcGFjaXR5PSIuNDgiLz4KICA8ZyBvcGFjaXR5PSIuMzYiIGZpbGw9IiM3MzdiODgiPjxyZWN0IHg9IjQ5MCIgeT0iNDM1IiB3aWR0aD0iMzgiIGhlaWdodD0iODYiLz48cmVjdCB4PSI1NDUiIHk9IjQ2MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjY0Ii8+PHJlY3QgeD0iNjE1IiB5PSI0MjAiIHdpZHRoPSI0MiIgaGVpZ2h0PSIxMDUiLz48cmVjdCB4PSI2ODAiIHk9IjQ1NSIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcyIi8+PC9nPgogIDxyZWN0IHg9IjAiIHk9IjU4NSIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMzE1IiBmaWxsPSJ1cmwoI3BhdmluZykiLz4KICA8cGF0aCBkPSJNMCA2MjAgQzI4MCA2MTAgNTIwIDYzMiA3NjAgNjEyIEMxMDQwIDU5MiAxMzMwIDYwMCAxNjAwIDU4NSBMMTYwMCA5MDAgTDAgOTAwIFoiIGZpbGw9IiNjN2JlYjQiIG9wYWNpdHk9Ii43Ii8+CiAgPGcgb3BhY2l0eT0iLjIiIHN0cm9rZT0iIzhmODY3ZCIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJNMCA2OTAgSDE2MDAiLz48cGF0aCBkPSJNMCA3NzAgSDE2MDAiLz48cGF0aCBkPSJNMTIwIDU4NSBMMzAgOTAwIi8+PHBhdGggZD0iTTM5MCA1ODUgTDMzMCA5MDAiLz48cGF0aCBkPSJNNjkwIDU4NSBMNjY1IDkwMCIvPjxwYXRoIGQ9Ik05ODAgNTg1IEw5OTAgOTAwIi8+PHBhdGggZD0iTTEyNjAgNTg1IEwxMzIwIDkwMCIvPjwvZz4KICA8cG9seWdvbiBwb2ludHM9IjY1MCwxMjAgMTYwMCwwIDE2MDAsODA1IDY0MCw4MDUgNjQwLDI1NSIgZmlsbD0idXJsKCN3YWxsKSIvPgogIDxwb2x5Z29uIHBvaW50cz0iNjI1LDI1MCAxNjAwLDgyIDE2MDAsMTI1IDY3MCwzMDAiIGZpbGw9IiMyYzI5MjgiLz4KICA8cmVjdCB4PSI3ODAiIHk9IjI3NSIgd2lkdGg9IjE3NSIgaGVpZ2h0PSIyNDUiIGZpbGw9IiMxMTE4MjAiLz48cmVjdCB4PSI4MDAiIHk9IjMwMCIgd2lkdGg9IjEzNSIgaGVpZ2h0PSIxOTAiIGZpbGw9IiM2NTcxN2QiIG9wYWNpdHk9Ii40NSIvPgogIDxyZWN0IHg9IjEwNzUiIHk9IjIxMCIgd2lkdGg9IjE0NSIgaGVpZ2h0PSIzMzAiIGZpbGw9IiMxNjE5MWYiLz48cmVjdCB4PSIxMDk1IiB5PSIyMzUiIHdpZHRoPSIxMDUiIGhlaWdodD0iMjcwIiBmaWxsPSIjNjc3MTdjIiBvcGFjaXR5PSIuNDIiLz4KICA8cmVjdCB4PSIxMzI1IiB5PSIxOTgiIHdpZHRoPSIxOTAiIGhlaWdodD0iMzYwIiBmaWxsPSIjMTExNDFhIi8+PHJlY3QgeD0iMTM1MCIgeT0iMjI1IiB3aWR0aD0iMTQ1IiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzY1NzE3ZCIgb3BhY2l0eT0iLjQyIi8+CiAgPHJlY3QgeD0iNzYwIiB5PSI1MzIiIHdpZHRoPSI4MzAiIGhlaWdodD0iNzAiIGZpbGw9IiNkNmNkYzMiLz4KICA8cmVjdCB4PSI3MjAiIHk9IjYwMiIgd2lkdGg9Ijg4MCIgaGVpZ2h0PSI5NSIgZmlsbD0iI2JjYTk4ZiIvPgogIDxnIHN0cm9rZT0iIzkyN2M2MiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNSI+PHBhdGggZD0iTTcyMCA2MzAgSDE2MDAiLz48cGF0aCBkPSJNNzIwIDY2NSBIMTYwMCIvPjxwYXRoIGQ9Ik04NTAgNjAyIFY2OTciLz48cGF0aCBkPSJNMTAxMCA2MDIgVjY5NyIvPjxwYXRoIGQ9Ik0xMTcwIDYwMiBWNjk3Ii8+PHBhdGggZD0iTTEzMzAgNjAyIFY2OTciLz48cGF0aCBkPSJNMTQ5MCA2MDIgVjY5NyIvPjwvZz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4wNSIvPgo8L3N2Zz4K" alt="Cleaned post-construction Durban property exterior" />
-+      <div class="overlay"></div>
-+      <div class="container">
-+        <div class="section-heading reveal">
-+          <p class="eyebrow">Before / After</p>
-+          <h2>Post-Construction Patio Reset</h2>
-+          <p class="subtitle">Drag the handle to compare the messy construction handover with the clean, client-ready finish.</p>
-+        </div>
-+        <div class="ba-slider glass reveal" data-before="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPkJlZm9yZSBwb3N0LWNvbnN0cnVjdGlvbiBjbGVhbnVwPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+QSBEdXJiYW4gaGlsbHNpZGUgaG9tZSBleHRlcmlvciBiZWZvcmUgY2xlYW5pbmcsIHdpdGggYnVpbGRpbmcgYnVja2V0cywgYnJpY2tzLCBtdWQsIGFuZCBjb25zdHJ1Y3Rpb24gcmVzaWR1ZSBhdCBzdW5zZXQuPC9kZXNjPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJza3kiIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmNmMyN2EiLz48c3RvcCBvZmZzZXQ9Ii4zNSIgc3RvcC1jb2xvcj0iI2Q0NmEzZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzMxMzc0NCIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgxPSIwIiB4Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjOGU4NzgxIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM2UzZTQyIi8+PC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9InJvdWdoIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC45IiBudW1PY3RhdmVzPSIzIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMC4xOCIvPjxmZUJsZW5kIGluPSJTb3VyY2VHcmFwaGljIiBtb2RlPSJtdWx0aXBseSIvPjwvZmlsdGVyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjMzMCIgcj0iNzAiIGZpbGw9IiNmZmQwNmEiIG9wYWNpdHk9Ii45MiIvPgogIDxwYXRoIGQ9Ik0wIDUyMCBDMjIwIDQ3MCA0MjAgNTU1IDY1MCA1MDAgQzc2MCA0NzUgOTAwIDUwMCAxMDQwIDQ3NSBDMTIwMCA0NDUgMTM4MCA1MDAgMTYwMCA0NjAgTDE2MDAgOTAwIEwwIDkwMCBaIiBmaWxsPSIjMzg0MTRkIiBvcGFjaXR5PSIuNjUiLz4KICA8ZyBvcGFjaXR5PSIuNDUiIGZpbGw9IiM2Zjc2ODQiPjxyZWN0IHg9IjUwMCIgeT0iNDMwIiB3aWR0aD0iMzgiIGhlaWdodD0iOTIiLz48cmVjdCB4PSI1NTAiIHk9IjQ1NSIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIi8+PHJlY3QgeD0iNjEwIiB5PSI0MTAiIHdpZHRoPSI0MiIgaGVpZ2h0PSIxMTIiLz48cmVjdCB4PSI2NzYiIHk9IjQ1MCIgd2lkdGg9IjI4IiBoZWlnaHQ9Ijc4Ii8+PC9nPgogIDxyZWN0IHg9IjAiIHk9IjU3NSIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMzI1IiBmaWxsPSIjNWY0YjNkIiBmaWx0ZXI9InVybCgjcm91Z2gpIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2OTAsMTIwIDE2MDAsMCAxNjAwLDgyMCA2MjAsODIwIDYyMCwyNTAiIGZpbGw9InVybCgjd2FsbCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjY0MCwyNTAgMTYwMCw4NSAxNjAwLDEzMCA2ODAsMzA1IiBmaWxsPSIjMjAxZDFkIi8+CiAgPHJlY3QgeD0iODAwIiB5PSIyODUiIHdpZHRoPSIxNzAiIGhlaWdodD0iMjM1IiBmaWxsPSIjMTExODIwIi8+PHJlY3QgeD0iODE1IiB5PSIzMDUiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTkwIiBmaWxsPSIjMmIzMzNiIiBvcGFjaXR5PSIuNTUiLz4KICA8cmVjdCB4PSIxMDcwIiB5PSIyMTAiIHdpZHRoPSIxNDUiIGhlaWdodD0iMzMwIiBmaWxsPSIjMTYxOTFmIi8+PHJlY3QgeD0iMTA4NiIgeT0iMjM1IiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjI3MCIgZmlsbD0iIzJjMzMzOSIgb3BhY2l0eT0iLjU1Ii8+CiAgPHJlY3QgeD0iMTMyNSIgeT0iMTk1IiB3aWR0aD0iMTkwIiBoZWlnaHQ9IjM2MCIgZmlsbD0iIzExMTQxYSIvPjxyZWN0IHg9IjEzNDUiIHk9IjIyNSIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMyYzMzMzkiIG9wYWNpdHk9Ii41Ii8+CiAgPHJlY3QgeD0iNzYwIiB5PSI1MzUiIHdpZHRoPSI4MjAiIGhlaWdodD0iNzUiIGZpbGw9IiM5YzkxODgiIG9wYWNpdHk9Ii43MiIvPgogIDxyZWN0IHg9IjcwMCIgeT0iNjEyIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjEwNSIgZmlsbD0iIzU0NDQzYSIgZmlsdGVyPSJ1cmwoI3JvdWdoKSIvPgogIDxnIGZpbGw9IiM4NjU2NDIiPjxyZWN0IHg9IjUwMCIgeT0iNjU1IiB3aWR0aD0iNTgiIGhlaWdodD0iMzUiLz48cmVjdCB4PSI1NjAiIHk9IjY1NiIgd2lkdGg9IjYyIiBoZWlnaHQ9IjM1Ii8+PHJlY3QgeD0iNjIwIiB5PSI2NTQiIHdpZHRoPSI2MCIgaGVpZ2h0PSIzNSIvPjxyZWN0IHg9IjUzMCIgeT0iNjIwIiB3aWR0aD0iNjQiIGhlaWdodD0iMzQiLz48cmVjdCB4PSI1OTYiIHk9IjYyMCIgd2lkdGg9IjU4IiBoZWlnaHQ9IjM0Ii8+PHJlY3QgeD0iNTY2IiB5PSI1ODUiIHdpZHRoPSI2MiIgaGVpZ2h0PSIzNCIvPjwvZz4KICA8cGF0aCBkPSJNMTEwIDcyMCBMMzkwIDY5MCBMNDQwIDc2MCBMMTE1IDc5MiBaIiBmaWxsPSIjNmI1NTQ3IiBvcGFjaXR5PSIuOSIvPjxwYXRoIGQ9Ik04MCA4MjUgQzE3MCA3OTAgMzEwIDgzNSA0MzAgODAwIEM2MDAgNzU1IDgwMCA3ODAgOTQwIDgyNSBDNzYwIDg4NSAzOTAgODc1IDgwIDgyNVoiIGZpbGw9IiMyZDI2MWYiIG9wYWNpdHk9Ii43Ii8+CiAgPGcgZmlsbD0iIzRhNDc0MiIgc3Ryb2tlPSIjMWYxZDFiIiBzdHJva2Utd2lkdGg9IjciPjxlbGxpcHNlIGN4PSI5ODAiIGN5PSI3MzUiIHJ4PSI5NSIgcnk9IjI4Ii8+PHJlY3QgeD0iODg1IiB5PSI3MzUiIHdpZHRoPSIxOTAiIGhlaWdodD0iMTIwIiByeD0iMTgiLz48ZWxsaXBzZSBjeD0iMTE5MCIgY3k9IjczOCIgcng9Ijk1IiByeT0iMjgiLz48cmVjdCB4PSIxMDk1IiB5PSI3MzgiIHdpZHRoPSIxOTAiIGhlaWdodD0iMTE4IiByeD0iMTgiLz48ZWxsaXBzZSBjeD0iMTM5NSIgY3k9Ijc0OCIgcng9IjEwMCIgcnk9IjI4Ii8+PHJlY3QgeD0iMTI5NSIgeT0iNzQ4IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjExNSIgcng9IjE4Ii8+PC9nPgogIDxnIHN0cm9rZT0iIzJiMjkyNyIgc3Ryb2tlLXdpZHRoPSIxMCIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTEzNSA2OTAgbC01NSAxNDUiLz48cGF0aCBkPSJNMzEwIDcwMCBsNzUgMTM1Ii8+PGNpcmNsZSBjeD0iOTAiIGN5PSI4NDgiIHI9IjI4IiBmaWxsPSIjM2QzYTM1Ii8+PGNpcmNsZSBjeD0iMzkwIiBjeT0iODQ4IiByPSIyOCIgZmlsbD0iIzNkM2EzNSIvPjwvZz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9IiMwMDAiIG9wYWNpdHk9Ii4wOCIvPgo8L3N2Zz4K" data-after="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPkFmdGVyIHBvc3QtY29uc3RydWN0aW9uIGNsZWFudXA8L3RpdGxlPgogIDxkZXNjIGlkPSJkZXNjIj5BIER1cmJhbiBoaWxsc2lkZSBob21lIGV4dGVyaW9yIGFmdGVyIGNsZWFuaW5nLCB3aXRoIGEgY2xlYXIgcGF0aW8sIHNwb3RsZXNzIHBhdmluZywgYW5kIHN1bnNldCBzZWEgdmlldy48L2Rlc2M+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTFhNCIvPjxzdG9wIG9mZnNldD0iLjQyIiBzdG9wLWNvbG9yPSIjZjI4YTNjIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYmFjN2QzIi8+PC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0id2FsbCIgeDE9IjAiIHgyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNjNGJiYjIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2ZTZiNmQiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJwYXZpbmciIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNkN2QxYzgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNhNjlkOTMiLz48L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxjaXJjbGUgY3g9IjE0NSIgY3k9IjM2NSIgcj0iNjgiIGZpbGw9IiNmZmQ1NmYiIG9wYWNpdHk9Ii45NiIvPgogIDxwYXRoIGQ9Ik0wIDUzMCBDMjYwIDQ3MCA0MzAgNTYwIDY1MCA1MTAgQzgxMCA0NzUgOTIwIDUxNSAxMDgwIDQ4MCBDMTIzMCA0NTAgMTQwMCA1MDUgMTYwMCA0NzAgTDE2MDAgOTAwIEwwIDkwMCBaIiBmaWxsPSIjNjU3MTgwIiBvcGFjaXR5PSIuNDgiLz4KICA8ZyBvcGFjaXR5PSIuMzYiIGZpbGw9IiM3MzdiODgiPjxyZWN0IHg9IjQ5MCIgeT0iNDM1IiB3aWR0aD0iMzgiIGhlaWdodD0iODYiLz48cmVjdCB4PSI1NDUiIHk9IjQ2MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjY0Ii8+PHJlY3QgeD0iNjE1IiB5PSI0MjAiIHdpZHRoPSI0MiIgaGVpZ2h0PSIxMDUiLz48cmVjdCB4PSI2ODAiIHk9IjQ1NSIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcyIi8+PC9nPgogIDxyZWN0IHg9IjAiIHk9IjU4NSIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMzE1IiBmaWxsPSJ1cmwoI3BhdmluZykiLz4KICA8cGF0aCBkPSJNMCA2MjAgQzI4MCA2MTAgNTIwIDYzMiA3NjAgNjEyIEMxMDQwIDU5MiAxMzMwIDYwMCAxNjAwIDU4NSBMMTYwMCA5MDAgTDAgOTAwIFoiIGZpbGw9IiNjN2JlYjQiIG9wYWNpdHk9Ii43Ii8+CiAgPGcgb3BhY2l0eT0iLjIiIHN0cm9rZT0iIzhmODY3ZCIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJNMCA2OTAgSDE2MDAiLz48cGF0aCBkPSJNMCA3NzAgSDE2MDAiLz48cGF0aCBkPSJNMTIwIDU4NSBMMzAgOTAwIi8+PHBhdGggZD0iTTM5MCA1ODUgTDMzMCA5MDAiLz48cGF0aCBkPSJNNjkwIDU4NSBMNjY1IDkwMCIvPjxwYXRoIGQ9Ik05ODAgNTg1IEw5OTAgOTAwIi8+PHBhdGggZD0iTTEyNjAgNTg1IEwxMzIwIDkwMCIvPjwvZz4KICA8cG9seWdvbiBwb2ludHM9IjY1MCwxMjAgMTYwMCwwIDE2MDAsODA1IDY0MCw4MDUgNjQwLDI1NSIgZmlsbD0idXJsKCN3YWxsKSIvPgogIDxwb2x5Z29uIHBvaW50cz0iNjI1LDI1MCAxNjAwLDgyIDE2MDAsMTI1IDY3MCwzMDAiIGZpbGw9IiMyYzI5MjgiLz4KICA8cmVjdCB4PSI3ODAiIHk9IjI3NSIgd2lkdGg9IjE3NSIgaGVpZ2h0PSIyNDUiIGZpbGw9IiMxMTE4MjAiLz48cmVjdCB4PSI4MDAiIHk9IjMwMCIgd2lkdGg9IjEzNSIgaGVpZ2h0PSIxOTAiIGZpbGw9IiM2NTcxN2QiIG9wYWNpdHk9Ii40NSIvPgogIDxyZWN0IHg9IjEwNzUiIHk9IjIxMCIgd2lkdGg9IjE0NSIgaGVpZ2h0PSIzMzAiIGZpbGw9IiMxNjE5MWYiLz48cmVjdCB4PSIxMDk1IiB5PSIyMzUiIHdpZHRoPSIxMDUiIGhlaWdodD0iMjcwIiBmaWxsPSIjNjc3MTdjIiBvcGFjaXR5PSIuNDIiLz4KICA8cmVjdCB4PSIxMzI1IiB5PSIxOTgiIHdpZHRoPSIxOTAiIGhlaWdodD0iMzYwIiBmaWxsPSIjMTExNDFhIi8+PHJlY3QgeD0iMTM1MCIgeT0iMjI1IiB3aWR0aD0iMTQ1IiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzY1NzE3ZCIgb3BhY2l0eT0iLjQyIi8+CiAgPHJlY3QgeD0iNzYwIiB5PSI1MzIiIHdpZHRoPSI4MzAiIGhlaWdodD0iNzAiIGZpbGw9IiNkNmNkYzMiLz4KICA8cmVjdCB4PSI3MjAiIHk9IjYwMiIgd2lkdGg9Ijg4MCIgaGVpZ2h0PSI5NSIgZmlsbD0iI2JjYTk4ZiIvPgogIDxnIHN0cm9rZT0iIzkyN2M2MiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNSI+PHBhdGggZD0iTTcyMCA2MzAgSDE2MDAiLz48cGF0aCBkPSJNNzIwIDY2NSBIMTYwMCIvPjxwYXRoIGQ9Ik04NTAgNjAyIFY2OTciLz48cGF0aCBkPSJNMTAxMCA2MDIgVjY5NyIvPjxwYXRoIGQ9Ik0xMTcwIDYwMiBWNjk3Ii8+PHBhdGggZD0iTTEzMzAgNjAyIFY2OTciLz48cGF0aCBkPSJNMTQ5MCA2MDIgVjY5NyIvPjwvZz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4wNSIvPgo8L3N2Zz4K">
-+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPkFmdGVyIHBvc3QtY29uc3RydWN0aW9uIGNsZWFudXA8L3RpdGxlPgogIDxkZXNjIGlkPSJkZXNjIj5BIER1cmJhbiBoaWxsc2lkZSBob21lIGV4dGVyaW9yIGFmdGVyIGNsZWFuaW5nLCB3aXRoIGEgY2xlYXIgcGF0aW8sIHNwb3RsZXNzIHBhdmluZywgYW5kIHN1bnNldCBzZWEgdmlldy48L2Rlc2M+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTFhNCIvPjxzdG9wIG9mZnNldD0iLjQyIiBzdG9wLWNvbG9yPSIjZjI4YTNjIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYmFjN2QzIi8+PC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0id2FsbCIgeDE9IjAiIHgyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNjNGJiYjIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2ZTZiNmQiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJwYXZpbmciIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNkN2QxYzgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNhNjlkOTMiLz48L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxjaXJjbGUgY3g9IjE0NSIgY3k9IjM2NSIgcj0iNjgiIGZpbGw9IiNmZmQ1NmYiIG9wYWNpdHk9Ii45NiIvPgogIDxwYXRoIGQ9Ik0wIDUzMCBDMjYwIDQ3MCA0MzAgNTYwIDY1MCA1MTAgQzgxMCA0NzUgOTIwIDUxNSAxMDgwIDQ4MCBDMTIzMCA0NTAgMTQwMCA1MDUgMTYwMCA0NzAgTDE2MDAgOTAwIEwwIDkwMCBaIiBmaWxsPSIjNjU3MTgwIiBvcGFjaXR5PSIuNDgiLz4KICA8ZyBvcGFjaXR5PSIuMzYiIGZpbGw9IiM3MzdiODgiPjxyZWN0IHg9IjQ5MCIgeT0iNDM1IiB3aWR0aD0iMzgiIGhlaWdodD0iODYiLz48cmVjdCB4PSI1NDUiIHk9IjQ2MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjY0Ii8+PHJlY3QgeD0iNjE1IiB5PSI0MjAiIHdpZHRoPSI0MiIgaGVpZ2h0PSIxMDUiLz48cmVjdCB4PSI2ODAiIHk9IjQ1NSIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcyIi8+PC9nPgogIDxyZWN0IHg9IjAiIHk9IjU4NSIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMzE1IiBmaWxsPSJ1cmwoI3BhdmluZykiLz4KICA8cGF0aCBkPSJNMCA2MjAgQzI4MCA2MTAgNTIwIDYzMiA3NjAgNjEyIEMxMDQwIDU5MiAxMzMwIDYwMCAxNjAwIDU4NSBMMTYwMCA5MDAgTDAgOTAwIFoiIGZpbGw9IiNjN2JlYjQiIG9wYWNpdHk9Ii43Ii8+CiAgPGcgb3BhY2l0eT0iLjIiIHN0cm9rZT0iIzhmODY3ZCIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJNMCA2OTAgSDE2MDAiLz48cGF0aCBkPSJNMCA3NzAgSDE2MDAiLz48cGF0aCBkPSJNMTIwIDU4NSBMMzAgOTAwIi8+PHBhdGggZD0iTTM5MCA1ODUgTDMzMCA5MDAiLz48cGF0aCBkPSJNNjkwIDU4NSBMNjY1IDkwMCIvPjxwYXRoIGQ9Ik05ODAgNTg1IEw5OTAgOTAwIi8+PHBhdGggZD0iTTEyNjAgNTg1IEwxMzIwIDkwMCIvPjwvZz4KICA8cG9seWdvbiBwb2ludHM9IjY1MCwxMjAgMTYwMCwwIDE2MDAsODA1IDY0MCw4MDUgNjQwLDI1NSIgZmlsbD0idXJsKCN3YWxsKSIvPgogIDxwb2x5Z29uIHBvaW50cz0iNjI1LDI1MCAxNjAwLDgyIDE2MDAsMTI1IDY3MCwzMDAiIGZpbGw9IiMyYzI5MjgiLz4KICA8cmVjdCB4PSI3ODAiIHk9IjI3NSIgd2lkdGg9IjE3NSIgaGVpZ2h0PSIyNDUiIGZpbGw9IiMxMTE4MjAiLz48cmVjdCB4PSI4MDAiIHk9IjMwMCIgd2lkdGg9IjEzNSIgaGVpZ2h0PSIxOTAiIGZpbGw9IiM2NTcxN2QiIG9wYWNpdHk9Ii40NSIvPgogIDxyZWN0IHg9IjEwNzUiIHk9IjIxMCIgd2lkdGg9IjE0NSIgaGVpZ2h0PSIzMzAiIGZpbGw9IiMxNjE5MWYiLz48cmVjdCB4PSIxMDk1IiB5PSIyMzUiIHdpZHRoPSIxMDUiIGhlaWdodD0iMjcwIiBmaWxsPSIjNjc3MTdjIiBvcGFjaXR5PSIuNDIiLz4KICA8cmVjdCB4PSIxMzI1IiB5PSIxOTgiIHdpZHRoPSIxOTAiIGhlaWdodD0iMzYwIiBmaWxsPSIjMTExNDFhIi8+PHJlY3QgeD0iMTM1MCIgeT0iMjI1IiB3aWR0aD0iMTQ1IiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzY1NzE3ZCIgb3BhY2l0eT0iLjQyIi8+CiAgPHJlY3QgeD0iNzYwIiB5PSI1MzIiIHdpZHRoPSI4MzAiIGhlaWdodD0iNzAiIGZpbGw9IiNkNmNkYzMiLz4KICA8cmVjdCB4PSI3MjAiIHk9IjYwMiIgd2lkdGg9Ijg4MCIgaGVpZ2h0PSI5NSIgZmlsbD0iI2JjYTk4ZiIvPgogIDxnIHN0cm9rZT0iIzkyN2M2MiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNSI+PHBhdGggZD0iTTcyMCA2MzAgSDE2MDAiLz48cGF0aCBkPSJNNzIwIDY2NSBIMTYwMCIvPjxwYXRoIGQ9Ik04NTAgNjAyIFY2OTciLz48cGF0aCBkPSJNMTAxMCA2MDIgVjY5NyIvPjxwYXRoIGQ9Ik0xMTcwIDYwMiBWNjk3Ii8+PHBhdGggZD0iTTEzMzAgNjAyIFY2OTciLz48cGF0aCBkPSJNMTQ5MCA2MDIgVjY5NyIvPjwvZz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4wNSIvPgo8L3N2Zz4K" alt="After: spotless patio and exterior after Duraclean post-construction cleanup" />
-+          <div class="before-wrap" style="width:50%">
-+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPkJlZm9yZSBwb3N0LWNvbnN0cnVjdGlvbiBjbGVhbnVwPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+QSBEdXJiYW4gaGlsbHNpZGUgaG9tZSBleHRlcmlvciBiZWZvcmUgY2xlYW5pbmcsIHdpdGggYnVpbGRpbmcgYnVja2V0cywgYnJpY2tzLCBtdWQsIGFuZCBjb25zdHJ1Y3Rpb24gcmVzaWR1ZSBhdCBzdW5zZXQuPC9kZXNjPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJza3kiIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmNmMyN2EiLz48c3RvcCBvZmZzZXQ9Ii4zNSIgc3RvcC1jb2xvcj0iI2Q0NmEzZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzMxMzc0NCIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgxPSIwIiB4Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjOGU4NzgxIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM2UzZTQyIi8+PC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9InJvdWdoIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC45IiBudW1PY3RhdmVzPSIzIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMC4xOCIvPjxmZUJsZW5kIGluPSJTb3VyY2VHcmFwaGljIiBtb2RlPSJtdWx0aXBseSIvPjwvZmlsdGVyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjMzMCIgcj0iNzAiIGZpbGw9IiNmZmQwNmEiIG9wYWNpdHk9Ii45MiIvPgogIDxwYXRoIGQ9Ik0wIDUyMCBDMjIwIDQ3MCA0MjAgNTU1IDY1MCA1MDAgQzc2MCA0NzUgOTAwIDUwMCAxMDQwIDQ3NSBDMTIwMCA0NDUgMTM4MCA1MDAgMTYwMCA0NjAgTDE2MDAgOTAwIEwwIDkwMCBaIiBmaWxsPSIjMzg0MTRkIiBvcGFjaXR5PSIuNjUiLz4KICA8ZyBvcGFjaXR5PSIuNDUiIGZpbGw9IiM2Zjc2ODQiPjxyZWN0IHg9IjUwMCIgeT0iNDMwIiB3aWR0aD0iMzgiIGhlaWdodD0iOTIiLz48cmVjdCB4PSI1NTAiIHk9IjQ1NSIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIi8+PHJlY3QgeD0iNjEwIiB5PSI0MTAiIHdpZHRoPSI0MiIgaGVpZ2h0PSIxMTIiLz48cmVjdCB4PSI2NzYiIHk9IjQ1MCIgd2lkdGg9IjI4IiBoZWlnaHQ9Ijc4Ii8+PC9nPgogIDxyZWN0IHg9IjAiIHk9IjU3NSIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMzI1IiBmaWxsPSIjNWY0YjNkIiBmaWx0ZXI9InVybCgjcm91Z2gpIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2OTAsMTIwIDE2MDAsMCAxNjAwLDgyMCA2MjAsODIwIDYyMCwyNTAiIGZpbGw9InVybCgjd2FsbCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjY0MCwyNTAgMTYwMCw4NSAxNjAwLDEzMCA2ODAsMzA1IiBmaWxsPSIjMjAxZDFkIi8+CiAgPHJlY3QgeD0iODAwIiB5PSIyODUiIHdpZHRoPSIxNzAiIGhlaWdodD0iMjM1IiBmaWxsPSIjMTExODIwIi8+PHJlY3QgeD0iODE1IiB5PSIzMDUiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTkwIiBmaWxsPSIjMmIzMzNiIiBvcGFjaXR5PSIuNTUiLz4KICA8cmVjdCB4PSIxMDcwIiB5PSIyMTAiIHdpZHRoPSIxNDUiIGhlaWdodD0iMzMwIiBmaWxsPSIjMTYxOTFmIi8+PHJlY3QgeD0iMTA4NiIgeT0iMjM1IiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjI3MCIgZmlsbD0iIzJjMzMzOSIgb3BhY2l0eT0iLjU1Ii8+CiAgPHJlY3QgeD0iMTMyNSIgeT0iMTk1IiB3aWR0aD0iMTkwIiBoZWlnaHQ9IjM2MCIgZmlsbD0iIzExMTQxYSIvPjxyZWN0IHg9IjEzNDUiIHk9IjIyNSIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMyYzMzMzkiIG9wYWNpdHk9Ii41Ii8+CiAgPHJlY3QgeD0iNzYwIiB5PSI1MzUiIHdpZHRoPSI4MjAiIGhlaWdodD0iNzUiIGZpbGw9IiM5YzkxODgiIG9wYWNpdHk9Ii43MiIvPgogIDxyZWN0IHg9IjcwMCIgeT0iNjEyIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjEwNSIgZmlsbD0iIzU0NDQzYSIgZmlsdGVyPSJ1cmwoI3JvdWdoKSIvPgogIDxnIGZpbGw9IiM4NjU2NDIiPjxyZWN0IHg9IjUwMCIgeT0iNjU1IiB3aWR0aD0iNTgiIGhlaWdodD0iMzUiLz48cmVjdCB4PSI1NjAiIHk9IjY1NiIgd2lkdGg9IjYyIiBoZWlnaHQ9IjM1Ii8+PHJlY3QgeD0iNjIwIiB5PSI2NTQiIHdpZHRoPSI2MCIgaGVpZ2h0PSIzNSIvPjxyZWN0IHg9IjUzMCIgeT0iNjIwIiB3aWR0aD0iNjQiIGhlaWdodD0iMzQiLz48cmVjdCB4PSI1OTYiIHk9IjYyMCIgd2lkdGg9IjU4IiBoZWlnaHQ9IjM0Ii8+PHJlY3QgeD0iNTY2IiB5PSI1ODUiIHdpZHRoPSI2MiIgaGVpZ2h0PSIzNCIvPjwvZz4KICA8cGF0aCBkPSJNMTEwIDcyMCBMMzkwIDY5MCBMNDQwIDc2MCBMMTE1IDc5MiBaIiBmaWxsPSIjNmI1NTQ3IiBvcGFjaXR5PSIuOSIvPjxwYXRoIGQ9Ik04MCA4MjUgQzE3MCA3OTAgMzEwIDgzNSA0MzAgODAwIEM2MDAgNzU1IDgwMCA3ODAgOTQwIDgyNSBDNzYwIDg4NSAzOTAgODc1IDgwIDgyNVoiIGZpbGw9IiMyZDI2MWYiIG9wYWNpdHk9Ii43Ii8+CiAgPGcgZmlsbD0iIzRhNDc0MiIgc3Ryb2tlPSIjMWYxZDFiIiBzdHJva2Utd2lkdGg9IjciPjxlbGxpcHNlIGN4PSI5ODAiIGN5PSI3MzUiIHJ4PSI5NSIgcnk9IjI4Ii8+PHJlY3QgeD0iODg1IiB5PSI3MzUiIHdpZHRoPSIxOTAiIGhlaWdodD0iMTIwIiByeD0iMTgiLz48ZWxsaXBzZSBjeD0iMTE5MCIgY3k9IjczOCIgcng9Ijk1IiByeT0iMjgiLz48cmVjdCB4PSIxMDk1IiB5PSI3MzgiIHdpZHRoPSIxOTAiIGhlaWdodD0iMTE4IiByeD0iMTgiLz48ZWxsaXBzZSBjeD0iMTM5NSIgY3k9Ijc0OCIgcng9IjEwMCIgcnk9IjI4Ii8+PHJlY3QgeD0iMTI5NSIgeT0iNzQ4IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjExNSIgcng9IjE4Ii8+PC9nPgogIDxnIHN0cm9rZT0iIzJiMjkyNyIgc3Ryb2tlLXdpZHRoPSIxMCIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTEzNSA2OTAgbC01NSAxNDUiLz48cGF0aCBkPSJNMzEwIDcwMCBsNzUgMTM1Ii8+PGNpcmNsZSBjeD0iOTAiIGN5PSI4NDgiIHI9IjI4IiBmaWxsPSIjM2QzYTM1Ii8+PGNpcmNsZSBjeD0iMzkwIiBjeT0iODQ4IiByPSIyOCIgZmlsbD0iIzNkM2EzNSIvPjwvZz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9IiMwMDAiIG9wYWNpdHk9Ii4wOCIvPgo8L3N2Zz4K" alt="Before: construction rubble, dirty buckets, bricks, and residue before cleanup" />
-+          </div>
-+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Compare before and after post-construction cleanup" />
-+          <div class="ba-label before">Before cleanup</div>
-+          <div class="ba-label after">After cleanup</div>
-+        </div>
-+        <div class="ba-thumbs reveal delay-1">
-+          <figure class="glass"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPkJlZm9yZSBwb3N0LWNvbnN0cnVjdGlvbiBjbGVhbnVwPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+QSBEdXJiYW4gaGlsbHNpZGUgaG9tZSBleHRlcmlvciBiZWZvcmUgY2xlYW5pbmcsIHdpdGggYnVpbGRpbmcgYnVja2V0cywgYnJpY2tzLCBtdWQsIGFuZCBjb25zdHJ1Y3Rpb24gcmVzaWR1ZSBhdCBzdW5zZXQuPC9kZXNjPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJza3kiIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmNmMyN2EiLz48c3RvcCBvZmZzZXQ9Ii4zNSIgc3RvcC1jb2xvcj0iI2Q0NmEzZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzMxMzc0NCIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgxPSIwIiB4Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjOGU4NzgxIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM2UzZTQyIi8+PC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9InJvdWdoIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC45IiBudW1PY3RhdmVzPSIzIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMC4xOCIvPjxmZUJsZW5kIGluPSJTb3VyY2VHcmFwaGljIiBtb2RlPSJtdWx0aXBseSIvPjwvZmlsdGVyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjMzMCIgcj0iNzAiIGZpbGw9IiNmZmQwNmEiIG9wYWNpdHk9Ii45MiIvPgogIDxwYXRoIGQ9Ik0wIDUyMCBDMjIwIDQ3MCA0MjAgNTU1IDY1MCA1MDAgQzc2MCA0NzUgOTAwIDUwMCAxMDQwIDQ3NSBDMTIwMCA0NDUgMTM4MCA1MDAgMTYwMCA0NjAgTDE2MDAgOTAwIEwwIDkwMCBaIiBmaWxsPSIjMzg0MTRkIiBvcGFjaXR5PSIuNjUiLz4KICA8ZyBvcGFjaXR5PSIuNDUiIGZpbGw9IiM2Zjc2ODQiPjxyZWN0IHg9IjUwMCIgeT0iNDMwIiB3aWR0aD0iMzgiIGhlaWdodD0iOTIiLz48cmVjdCB4PSI1NTAiIHk9IjQ1NSIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIi8+PHJlY3QgeD0iNjEwIiB5PSI0MTAiIHdpZHRoPSI0MiIgaGVpZ2h0PSIxMTIiLz48cmVjdCB4PSI2NzYiIHk9IjQ1MCIgd2lkdGg9IjI4IiBoZWlnaHQ9Ijc4Ii8+PC9nPgogIDxyZWN0IHg9IjAiIHk9IjU3NSIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMzI1IiBmaWxsPSIjNWY0YjNkIiBmaWx0ZXI9InVybCgjcm91Z2gpIi8+CiAgPHBvbHlnb24gcG9pbnRzPSI2OTAsMTIwIDE2MDAsMCAxNjAwLDgyMCA2MjAsODIwIDYyMCwyNTAiIGZpbGw9InVybCgjd2FsbCkiLz4KICA8cG9seWdvbiBwb2ludHM9IjY0MCwyNTAgMTYwMCw4NSAxNjAwLDEzMCA2ODAsMzA1IiBmaWxsPSIjMjAxZDFkIi8+CiAgPHJlY3QgeD0iODAwIiB5PSIyODUiIHdpZHRoPSIxNzAiIGhlaWdodD0iMjM1IiBmaWxsPSIjMTExODIwIi8+PHJlY3QgeD0iODE1IiB5PSIzMDUiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTkwIiBmaWxsPSIjMmIzMzNiIiBvcGFjaXR5PSIuNTUiLz4KICA8cmVjdCB4PSIxMDcwIiB5PSIyMTAiIHdpZHRoPSIxNDUiIGhlaWdodD0iMzMwIiBmaWxsPSIjMTYxOTFmIi8+PHJlY3QgeD0iMTA4NiIgeT0iMjM1IiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjI3MCIgZmlsbD0iIzJjMzMzOSIgb3BhY2l0eT0iLjU1Ii8+CiAgPHJlY3QgeD0iMTMyNSIgeT0iMTk1IiB3aWR0aD0iMTkwIiBoZWlnaHQ9IjM2MCIgZmlsbD0iIzExMTQxYSIvPjxyZWN0IHg9IjEzNDUiIHk9IjIyNSIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMyYzMzMzkiIG9wYWNpdHk9Ii41Ii8+CiAgPHJlY3QgeD0iNzYwIiB5PSI1MzUiIHdpZHRoPSI4MjAiIGhlaWdodD0iNzUiIGZpbGw9IiM5YzkxODgiIG9wYWNpdHk9Ii43MiIvPgogIDxyZWN0IHg9IjcwMCIgeT0iNjEyIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjEwNSIgZmlsbD0iIzU0NDQzYSIgZmlsdGVyPSJ1cmwoI3JvdWdoKSIvPgogIDxnIGZpbGw9IiM4NjU2NDIiPjxyZWN0IHg9IjUwMCIgeT0iNjU1IiB3aWR0aD0iNTgiIGhlaWdodD0iMzUiLz48cmVjdCB4PSI1NjAiIHk9IjY1NiIgd2lkdGg9IjYyIiBoZWlnaHQ9IjM1Ii8+PHJlY3QgeD0iNjIwIiB5PSI2NTQiIHdpZHRoPSI2MCIgaGVpZ2h0PSIzNSIvPjxyZWN0IHg9IjUzMCIgeT0iNjIwIiB3aWR0aD0iNjQiIGhlaWdodD0iMzQiLz48cmVjdCB4PSI1OTYiIHk9IjYyMCIgd2lkdGg9IjU4IiBoZWlnaHQ9IjM0Ii8+PHJlY3QgeD0iNTY2IiB5PSI1ODUiIHdpZHRoPSI2MiIgaGVpZ2h0PSIzNCIvPjwvZz4KICA8cGF0aCBkPSJNMTEwIDcyMCBMMzkwIDY5MCBMNDQwIDc2MCBMMTE1IDc5MiBaIiBmaWxsPSIjNmI1NTQ3IiBvcGFjaXR5PSIuOSIvPjxwYXRoIGQ9Ik04MCA4MjUgQzE3MCA3OTAgMzEwIDgzNSA0MzAgODAwIEM2MDAgNzU1IDgwMCA3ODAgOTQwIDgyNSBDNzYwIDg4NSAzOTAgODc1IDgwIDgyNVoiIGZpbGw9IiMyZDI2MWYiIG9wYWNpdHk9Ii43Ii8+CiAgPGcgZmlsbD0iIzRhNDc0MiIgc3Ryb2tlPSIjMWYxZDFiIiBzdHJva2Utd2lkdGg9IjciPjxlbGxpcHNlIGN4PSI5ODAiIGN5PSI3MzUiIHJ4PSI5NSIgcnk9IjI4Ii8+PHJlY3QgeD0iODg1IiB5PSI3MzUiIHdpZHRoPSIxOTAiIGhlaWdodD0iMTIwIiByeD0iMTgiLz48ZWxsaXBzZSBjeD0iMTE5MCIgY3k9IjczOCIgcng9Ijk1IiByeT0iMjgiLz48cmVjdCB4PSIxMDk1IiB5PSI3MzgiIHdpZHRoPSIxOTAiIGhlaWdodD0iMTE4IiByeD0iMTgiLz48ZWxsaXBzZSBjeD0iMTM5NSIgY3k9Ijc0OCIgcng9IjEwMCIgcnk9IjI4Ii8+PHJlY3QgeD0iMTI5NSIgeT0iNzQ4IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjExNSIgcng9IjE4Ii8+PC9nPgogIDxnIHN0cm9rZT0iIzJiMjkyNyIgc3Ryb2tlLXdpZHRoPSIxMCIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTEzNSA2OTAgbC01NSAxNDUiLz48cGF0aCBkPSJNMzEwIDcwMCBsNzUgMTM1Ii8+PGNpcmNsZSBjeD0iOTAiIGN5PSI4NDgiIHI9IjI4IiBmaWxsPSIjM2QzYTM1Ii8+PGNpcmNsZSBjeD0iMzkwIiBjeT0iODQ4IiByPSIyOCIgZmlsbD0iIzNkM2EzNSIvPjwvZz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9IiMwMDAiIG9wYWNpdHk9Ii4wOCIvPgo8L3N2Zz4K" alt="Before cleaning thumbnail" /><figcaption>Before: construction rubble, buckets, and residue.</figcaption></figure>
-+          <figure class="glass"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPkFmdGVyIHBvc3QtY29uc3RydWN0aW9uIGNsZWFudXA8L3RpdGxlPgogIDxkZXNjIGlkPSJkZXNjIj5BIER1cmJhbiBoaWxsc2lkZSBob21lIGV4dGVyaW9yIGFmdGVyIGNsZWFuaW5nLCB3aXRoIGEgY2xlYXIgcGF0aW8sIHNwb3RsZXNzIHBhdmluZywgYW5kIHN1bnNldCBzZWEgdmlldy48L2Rlc2M+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZTFhNCIvPjxzdG9wIG9mZnNldD0iLjQyIiBzdG9wLWNvbG9yPSIjZjI4YTNjIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYmFjN2QzIi8+PC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0id2FsbCIgeDE9IjAiIHgyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNjNGJiYjIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2ZTZiNmQiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJwYXZpbmciIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNkN2QxYzgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNhNjlkOTMiLz48L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxjaXJjbGUgY3g9IjE0NSIgY3k9IjM2NSIgcj0iNjgiIGZpbGw9IiNmZmQ1NmYiIG9wYWNpdHk9Ii45NiIvPgogIDxwYXRoIGQ9Ik0wIDUzMCBDMjYwIDQ3MCA0MzAgNTYwIDY1MCA1MTAgQzgxMCA0NzUgOTIwIDUxNSAxMDgwIDQ4MCBDMTIzMCA0NTAgMTQwMCA1MDUgMTYwMCA0NzAgTDE2MDAgOTAwIEwwIDkwMCBaIiBmaWxsPSIjNjU3MTgwIiBvcGFjaXR5PSIuNDgiLz4KICA8ZyBvcGFjaXR5PSIuMzYiIGZpbGw9IiM3MzdiODgiPjxyZWN0IHg9IjQ5MCIgeT0iNDM1IiB3aWR0aD0iMzgiIGhlaWdodD0iODYiLz48cmVjdCB4PSI1NDUiIHk9IjQ2MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjY0Ii8+PHJlY3QgeD0iNjE1IiB5PSI0MjAiIHdpZHRoPSI0MiIgaGVpZ2h0PSIxMDUiLz48cmVjdCB4PSI2ODAiIHk9IjQ1NSIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcyIi8+PC9nPgogIDxyZWN0IHg9IjAiIHk9IjU4NSIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMzE1IiBmaWxsPSJ1cmwoI3BhdmluZykiLz4KICA8cGF0aCBkPSJNMCA2MjAgQzI4MCA2MTAgNTIwIDYzMiA3NjAgNjEyIEMxMDQwIDU5MiAxMzMwIDYwMCAxNjAwIDU4NSBMMTYwMCA5MDAgTDAgOTAwIFoiIGZpbGw9IiNjN2JlYjQiIG9wYWNpdHk9Ii43Ii8+CiAgPGcgb3BhY2l0eT0iLjIiIHN0cm9rZT0iIzhmODY3ZCIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJNMCA2OTAgSDE2MDAiLz48cGF0aCBkPSJNMCA3NzAgSDE2MDAiLz48cGF0aCBkPSJNMTIwIDU4NSBMMzAgOTAwIi8+PHBhdGggZD0iTTM5MCA1ODUgTDMzMCA5MDAiLz48cGF0aCBkPSJNNjkwIDU4NSBMNjY1IDkwMCIvPjxwYXRoIGQ9Ik05ODAgNTg1IEw5OTAgOTAwIi8+PHBhdGggZD0iTTEyNjAgNTg1IEwxMzIwIDkwMCIvPjwvZz4KICA8cG9seWdvbiBwb2ludHM9IjY1MCwxMjAgMTYwMCwwIDE2MDAsODA1IDY0MCw4MDUgNjQwLDI1NSIgZmlsbD0idXJsKCN3YWxsKSIvPgogIDxwb2x5Z29uIHBvaW50cz0iNjI1LDI1MCAxNjAwLDgyIDE2MDAsMTI1IDY3MCwzMDAiIGZpbGw9IiMyYzI5MjgiLz4KICA8cmVjdCB4PSI3ODAiIHk9IjI3NSIgd2lkdGg9IjE3NSIgaGVpZ2h0PSIyNDUiIGZpbGw9IiMxMTE4MjAiLz48cmVjdCB4PSI4MDAiIHk9IjMwMCIgd2lkdGg9IjEzNSIgaGVpZ2h0PSIxOTAiIGZpbGw9IiM2NTcxN2QiIG9wYWNpdHk9Ii40NSIvPgogIDxyZWN0IHg9IjEwNzUiIHk9IjIxMCIgd2lkdGg9IjE0NSIgaGVpZ2h0PSIzMzAiIGZpbGw9IiMxNjE5MWYiLz48cmVjdCB4PSIxMDk1IiB5PSIyMzUiIHdpZHRoPSIxMDUiIGhlaWdodD0iMjcwIiBmaWxsPSIjNjc3MTdjIiBvcGFjaXR5PSIuNDIiLz4KICA8cmVjdCB4PSIxMzI1IiB5PSIxOTgiIHdpZHRoPSIxOTAiIGhlaWdodD0iMzYwIiBmaWxsPSIjMTExNDFhIi8+PHJlY3QgeD0iMTM1MCIgeT0iMjI1IiB3aWR0aD0iMTQ1IiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzY1NzE3ZCIgb3BhY2l0eT0iLjQyIi8+CiAgPHJlY3QgeD0iNzYwIiB5PSI1MzIiIHdpZHRoPSI4MzAiIGhlaWdodD0iNzAiIGZpbGw9IiNkNmNkYzMiLz4KICA8cmVjdCB4PSI3MjAiIHk9IjYwMiIgd2lkdGg9Ijg4MCIgaGVpZ2h0PSI5NSIgZmlsbD0iI2JjYTk4ZiIvPgogIDxnIHN0cm9rZT0iIzkyN2M2MiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNSI+PHBhdGggZD0iTTcyMCA2MzAgSDE2MDAiLz48cGF0aCBkPSJNNzIwIDY2NSBIMTYwMCIvPjxwYXRoIGQ9Ik04NTAgNjAyIFY2OTciLz48cGF0aCBkPSJNMTAxMCA2MDIgVjY5NyIvPjxwYXRoIGQ9Ik0xMTcwIDYwMiBWNjk3Ii8+PHBhdGggZD0iTTEzMzAgNjAyIFY2OTciLz48cGF0aCBkPSJNMTQ5MCA2MDIgVjY5NyIvPjwvZz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4wNSIvPgo8L3N2Zz4K" alt="After cleaning thumbnail" /><figcaption>After: clear paving, clean entry, and ready-to-use exterior.</figcaption></figure>
-+        </div>
-+      </div>
-+    </section>
-+
-+    <section class="section container">
-+      <div class="section-heading reveal">
-+        <p class="eyebrow">Client Voices</p>
-+        <h2>Real Testimonials from Durban Clients</h2>
-+      </div>
-+      <div class="testimonials">
-+        <article class="glass reveal delay-1"><p>“Our office finally smells and looks premium every Monday. Their punctuality is unmatched.”</p><h4>— Nomusa, Umhlanga Office Manager</h4></article>
-+        <article class="glass reveal delay-2"><p>“Move-out cleaning was spotless, and we got our full deposit back. Highly recommended.”</p><h4>— Aiden, Durban North Tenant</h4></article>
-+        <article class="glass reveal delay-3"><p>“They restored our post-renovation home in one day. Very professional team and supervisor.”</p><h4>— Priya, Pinetown Homeowner</h4></article>
-+      </div>
-+    </section>
-+
-+    <section id="pricing" class="section container">
-+      <div class="section-heading reveal">
-+        <p class="eyebrow">What Visitors Need Next</p>
-+        <h2>Clear Packages + Strong Next Step</h2>
-+      </div>
-+      <div class="pricing-grid">
-+        <article class="glass reveal"><h3>Home Refresh</h3><p>from <strong>R600</strong></p><ul><li>Bedrooms, kitchen, bathrooms</li><li>Dust, sanitize, finish touches</li><li>Ideal weekly/bi-weekly</li></ul><a href="#contact" class="btn btn-outline">Request Booking</a></article>
-+        <article class="glass reveal delay-1 featured"><h3>Business Essential</h3><p>from <strong>R1,500</strong></p><ul><li>Workstations and common areas</li><li>Restroom hygiene standard</li><li>Supervisor quality check</li></ul><a href="#contact" class="btn btn-gold">Get Commercial Quote</a></article>
-+        <article class="glass reveal delay-2"><h3>Deep Reset</h3><p>custom <strong>Quote</strong></p><ul><li>Post-construction intensive clean</li><li>Windows, floors, upholstery</li><li>Move-in / move-out ready</li></ul><a href="#contact" class="btn btn-outline">Ask on WhatsApp</a></article>
-+      </div>
-+    </section>
-+  
-+    <section id="tracker" class="section container">
-+      <div class="section-heading reveal">
-+        <p class="eyebrow">Live Job Progress</p>
-+        <h2>Uber-Style Service Tracker (Client View)</h2>
-+        <p class="subtitle">Clients can track stage updates: Assigned → En Route → Cleaning in Progress → Completed.</p>
-+      </div>
-+      <div class="pricing-grid">
-+        <article class="glass reveal"><h3>Current Status</h3><p><strong>En Route</strong> • ETA 24 min</p><ul><li>Assigned cleaner: Team A</li><li>Supervisor check enabled</li><li>Last update: 09:42</li></ul></article>
-+        <article class="glass reveal delay-1"><h3>Service Map</h3><iframe title="Durban service map" src="https://maps.google.com/maps?q=durban&t=&z=12&ie=UTF8&iwloc=&output=embed" width="100%" height="210" style="border:0;border-radius:12px"></iframe></article>
-+      </div>
-+    </section>
-+
-+    <section id="social" class="section container">
-+      <div class="section-heading reveal">
-+        <p class="eyebrow">Auto Social Feed</p>
-+        <h2>New Instagram/Facebook Posts Auto-Display Here</h2>
-+        <p class="subtitle">Connect your social pages using an embed tool/API once, then new posts appear automatically.</p>
-+      </div>
-+      <div class="glass social-panel">
-+        <p><strong>Setup needed once:</strong> use Supabase for secure admin login + database storage, then connect Instagram/Facebook with Meta Graph API, Zapier, or Make.</p>
-+        <p>Admin panel URL: <a href="#admin-studio" target="_blank">Open Admin Studio</a> • Setup guide: <a href="#supabase-guide" target="_blank">Supabase Admin Guide</a></p>
-+        <div id="siteFeed" class="site-feed" aria-live="polite"></div>
-+      </div>
-+    </section>
-+
-+    <section id="admin-studio" class="section container admin-studio">
-+      <div class="section-heading reveal">
-+        <p class="eyebrow">All-in-One Admin</p>
-+        <h2>Local Admin Studio + Supabase Guide</h2>
-+        <p class="subtitle">This section replaces the separate admin page in the single-file version. Demo posts are stored in this browser only until Supabase is connected.</p>
-+      </div>
-+      <div class="admin-wrap">
-+        <div class="topbar admin-card">
-+          <h3>Duraclean Admin Studio</h3>
-+          <a class="button" href="#contact">Back to Website</a>
-+        </div>
-+        <div id="allInOneLogin" class="admin-card">
-+          <h3>Admin Login</h3>
-+          <p class="hint">This local demo uses a simple passcode. For real admin-only access, connect Supabase Auth using the guide below.</p>
-+          <input id="allInOnePass" type="password" placeholder="Enter admin passcode" autocomplete="current-password" />
-+          <button id="allInOneLoginBtn">Open Dashboard</button>
-+          <p class="hint">Demo passcode: <strong>duraclean-admin</strong></p>
-+        </div>
-+
-+        <section id="allInOneDash" class="hidden">
-+          <div class="admin-card">
-+            <h3>Post a Blog / Vlog / Gallery Update</h3>
-+            <div class="admin-grid">
-+              <label>Type
-+                <select id="allInOneType"><option value="blog">Blog</option><option value="vlog">Vlog</option><option value="photo">Photo</option></select>
-+              </label>
-+              <label>Title<input id="allInOneTitle" placeholder="Post title" maxlength="80" /></label>
-+            </div>
-+            <label>Caption / Blog Summary<textarea id="allInOneContent" rows="4" placeholder="Write a short caption or blog summary" maxlength="700"></textarea></label>
-+            <div class="admin-grid">
-+              <label>Image / Video URL<input id="allInOneMedia" placeholder="https://..." /></label>
-+              <label>Or Upload Image<input id="allInOneMediaFile" type="file" accept="image/*" /></label>
-+            </div>
-+            <div class="actions">
-+              <button id="allInOneSaveBtn">Publish to Website Preview</button>
-+              <a class="button" href="#social">View Website Feed</a>
-+            </div>
-+            <p class="hint">Local preview posts are stored only in this browser. Supabase makes posts secure, shared, and permanent.</p>
-+          </div>
-+          <div class="admin-card">
-+            <h3>Published Feed Preview</h3>
-+            <div id="allInOnePosts"></div>
-+          </div>
-+        </section>
-+
-+        <details id="supabase-guide" class="admin-card">
-+          <summary><strong>Read Supabase Admin Setup Guide</strong></summary>
-+          <pre class="setup-guide"># Duraclean Supabase Admin Panel Setup
-+
-+This site currently has a lightweight local Admin Studio (`admin.html`) that is useful for demos, but it stores posts only in the browser. Use Supabase when Duraclean needs a real admin panel that is private, secure, and works across phones/laptops.
-+
-+## What Supabase will add
-+
-+- **Admin-only login:** only approved Duraclean staff can publish.
-+- **Permanent posts:** blogs, vlogs, and photos are stored in a database instead of one browser.
-+- **Image/video uploads:** before/after photos can be stored in Supabase Storage.
-+- **Website feed:** the landing page can load approved posts automatically.
-+- **Future tracking:** staff location/job updates can be stored in real time for an Uber-style tracker.
-+
-+## Recommended setup
-+
-+### 1. Create a Supabase project
-+
-+1. Go to [supabase.com](https://supabase.com/).
-+2. Create a new project, for example `duraclean`.
-+3. Copy the **Project URL** and **anon public key** from **Project Settings → API**.
-+4. Keep the **service role key private**. Never paste it into `index.html` or `admin.html`.
-+
-+### 2. Create the database tables
-+
-+Open **SQL Editor** in Supabase and run:
-+
-+```sql
-+create table public.profiles (
-+  id uuid primary key references auth.users(id) on delete cascade,
-+  email text not null,
-+  role text not null default &#x27;viewer&#x27;,
-+  created_at timestamptz not null default now()
-+);
-+
-+create table public.posts (
-+  id uuid primary key default gen_random_uuid(),
-+  title text not null,
-+  content text,
-+  type text not null check (type in (&#x27;blog&#x27;, &#x27;vlog&#x27;, &#x27;photo&#x27;)),
-+  media_url text,
-+  published boolean not null default true,
-+  created_by uuid references auth.users(id),
-+  created_at timestamptz not null default now()
-+);
-+
-+alter table public.profiles enable row level security;
-+alter table public.posts enable row level security;
-+```
-+
-+### 3. Add row-level security policies
-+
-+These policies let the public website read published posts, but only admins can create/edit/delete.
-+
-+```sql
-+create policy &quot;Public can read published posts&quot;
-+on public.posts for select
-+using (published = true);
-+
-+create policy &quot;Admins can manage posts&quot;
-+on public.posts for all
-+to authenticated
-+using (
-+  exists (
-+    select 1 from public.profiles
-+    where profiles.id = auth.uid()
-+    and profiles.role = &#x27;admin&#x27;
-+  )
-+)
-+with check (
-+  exists (
-+    select 1 from public.profiles
-+    where profiles.id = auth.uid()
-+    and profiles.role = &#x27;admin&#x27;
-+  )
-+);
-+```
-+
-+### 4. Create the admin user
-+
-+1. In Supabase, go to **Authentication → Users**.
-+2. Invite or create the Duraclean admin email.
-+3. After the user exists, run this SQL and replace the email:
-+
-+```sql
-+insert into public.profiles (id, email, role)
-+select id, email, &#x27;admin&#x27;
-+from auth.users
-+where email = &#x27;admin@example.com&#x27;
-+on conflict (id) do update set role = &#x27;admin&#x27;;
-+```
-+
-+### 5. Add media storage
-+
-+1. Go to **Storage**.
-+2. Create a public bucket named `duraclean-media`.
-+3. Upload before/after photos, blog pictures, and vlog thumbnails there.
-+4. Save the public URL in the `posts.media_url` field.
-+
-+### 6. Connect the website JavaScript
-+
-+Add Supabase JS to `admin.html` and `index.html`:
-+
-+```html
-+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2&quot;&gt;&lt;/script&gt;
-+&lt;script&gt;
-+  const SUPABASE_URL = &#x27;https://YOUR_PROJECT.supabase.co&#x27;;
-+  const SUPABASE_ANON_KEY = &#x27;YOUR_ANON_PUBLIC_KEY&#x27;;
-+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-+&lt;/script&gt;
-+```
-+
-+Admin login example:
-+
-+```js
-+const { data, error } = await supabase.auth.signInWithPassword({
-+  email: adminEmail,
-+  password: adminPassword
-+});
-+```
-+
-+Publish post example:
-+
-+```js
-+await supabase.from(&#x27;posts&#x27;).insert({
-+  title,
-+  content,
-+  type,
-+  media_url: mediaUrl,
-+  published: true
-+});
-+```
-+
-+Website feed example:
-+
-+```js
-+const { data: posts } = await supabase
-+  .from(&#x27;posts&#x27;)
-+  .select(&#x27;title, content, type, media_url, created_at&#x27;)
-+  .eq(&#x27;published&#x27;, true)
-+  .order(&#x27;created_at&#x27;, { ascending: false })
-+  .limit(6);
-+```
-+
-+## Social media auto-posting
-+
-+For Instagram/Facebook auto-display, use one of these:
-+
-+- **Simplest:** an embed widget such as Elfsight, LightWidget, or SociableKIT.
-+- **Professional:** Meta Graph API connected to Supabase Edge Functions.
-+- **No-code automation:** Zapier or Make watches Instagram/Facebook and inserts new posts into Supabase.
-+
-+Recommended non-technical flow:
-+
-+1. Staff post photos or vlogs on Instagram/Facebook.
-+2. Zapier/Make detects the new post.
-+3. Automation creates a row in Supabase `posts`.
-+4. Website feed updates automatically.
-+
-+## Future Uber-style tracking
-+
-+For real tracking, add a `jobs` table and staff mobile check-ins:
-+
-+```sql
-+create table public.jobs (
-+  id uuid primary key default gen_random_uuid(),
-+  client_name text not null,
-+  status text not null default &#x27;assigned&#x27;,
-+  cleaner_name text,
-+  latitude double precision,
-+  longitude double precision,
-+  eta_minutes int,
-+  updated_at timestamptz not null default now()
-+);
-+```
-+
-+The staff phone can update `latitude`, `longitude`, `status`, and `eta_minutes`; the client page can subscribe to changes with Supabase Realtime.
-+</pre>
-+        </details>
-+      </div>
-+    </section>
-+
-+  </main>
-+
-+  <footer id="contact" class="footer">
-+    <div class="container footer-grid">
-+      <div><h2>Duraclean Solutions</h2><p>Luxury-level cleaning for homes, offices, schools, and retail spaces across Durban.</p></div>
-+      <div><h4>Fast Contact</h4><p>WhatsApp: +27 70 484 4283<br/>Phone: +27 70 484 4283</p></div>
-+      <div><h4>Book Today</h4><p>Tell us your area, property type, and preferred date.<br/>We’ll confirm quickly.</p></div>
-+    </div>
-+  </footer>
-+
-+  <script>
-+    const toggle = document.querySelector('.menu-toggle');
-+    const panel = document.getElementById('menuPanel');
-+    if (toggle && panel) {
-+      toggle.addEventListener('click', () => {
-+        const open = panel.classList.toggle('open');
-+        toggle.setAttribute('aria-expanded', String(open));
-+      });
-+      panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-+        panel.classList.remove('open');
-+        toggle.setAttribute('aria-expanded', 'false');
-+      }));
-+    }
-+
-+    const range = document.querySelector('.ba-range');
-+    const beforeWrap = document.querySelector('.before-wrap');
-+    if (range && beforeWrap) {
-+      range.addEventListener('input', e => beforeWrap.style.width = `${e.target.value}%`);
-+    }
-+
-+    const renderSiteFeed = () => {
-+      const feed = document.getElementById('siteFeed');
-+      if (!feed) return;
-+      const posts = JSON.parse(localStorage.getItem('duraclean_posts') || '[]');
-+      feed.innerHTML = posts.length
-+        ? posts.slice(0, 3).map(post => {
-+          const title = String(post.title || 'Duraclean update').replace(/[<>&]/g, char => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[char]));
-+          const content = String(post.content || '').replace(/[<>&]/g, char => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[char]));
-+          const media = String(post.media || '');
-+          const safeMedia = media.replace(/[<>&"']/g, char => ({'<':'&lt;','>':'&gt;','&':'&amp;','\"':'&quot;',"'":'&#039;'}[char]));
-+          const isImage = media.startsWith('data:image') || /\.(png|jpe?g|webp|gif|svg)(\?.*)?$/i.test(media);
-+          const image = media && isImage ? `<img src="${safeMedia}" alt="${title}" />` : '';
-+          return `<article>${image}<strong>${title}</strong><p>${content}</p></article>`;
-+        }).join('')
-+        : '<p class="feed-empty">No local admin posts yet. Publish from Admin Studio to preview the feed on this device.</p>';
-+    };
-+    renderSiteFeed();
-+
-+
-+    const allInOne = {
-+      login: document.getElementById('allInOneLogin'),
-+      dash: document.getElementById('allInOneDash'),
-+      postsEl: document.getElementById('allInOnePosts'),
-+      passInput: document.getElementById('allInOnePass'),
-+      typeInput: document.getElementById('allInOneType'),
-+      titleInput: document.getElementById('allInOneTitle'),
-+      contentInput: document.getElementById('allInOneContent'),
-+      mediaInput: document.getElementById('allInOneMedia'),
-+      mediaFileInput: document.getElementById('allInOneMediaFile')
-+    };
-+    const adminEscapeHtml = value => String(value || '').replace(/[<>&"']/g, char => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#039;'}[char]));
-+    const allInOneGetPosts = () => JSON.parse(localStorage.getItem('duraclean_posts') || '[]');
-+    const allInOneSetPosts = posts => localStorage.setItem('duraclean_posts', JSON.stringify(posts));
-+    const allInOneRender = () => {
-+      if (!allInOne.postsEl) return;
-+      const posts = allInOneGetPosts();
-+      allInOne.postsEl.innerHTML = posts.length ? posts.map((post,index) => {
-+        const media = String(post.media || '');
-+        const safeMedia = adminEscapeHtml(media);
-+        const image = media.startsWith('data:image') || /\.(png|jpe?g|webp|gif|svg)(\?.*)?$/i.test(media) ? `<img src="${safeMedia}" alt="${adminEscapeHtml(post.title)}" />` : '';
-+        const link = media && !image ? `<a href="${safeMedia}" target="_blank" rel="noopener noreferrer">Open media</a>` : '';
-+        return `<div class="admin-post">${image}<strong>${adminEscapeHtml(post.title)}</strong> <small>(${adminEscapeHtml(post.type)})</small><p>${adminEscapeHtml(post.content)}</p>${link}<div><button class="danger" data-delete="${index}">Delete</button></div></div>`;
-+      }).join('') : '<p>No posts yet.</p>';
-+    };
-+    const allInOneFileToDataUrl = file => new Promise(resolve => {
-+      if (!file) { resolve(''); return; }
-+      const reader = new FileReader();
-+      reader.onload = () => resolve(reader.result);
-+      reader.readAsDataURL(file);
-+    });
-+    document.getElementById('allInOneLoginBtn')?.addEventListener('click', () => {
-+      if (allInOne.passInput.value === 'duraclean-admin') {
-+        allInOne.login.classList.add('hidden');
-+        allInOne.dash.classList.remove('hidden');
-+        allInOneRender();
-+      } else alert('Wrong passcode');
-+    });
-+    document.getElementById('allInOneSaveBtn')?.addEventListener('click', async () => {
-+      if (!allInOne.titleInput.value.trim()) { alert('Please add a title.'); return; }
-+      const uploaded = await allInOneFileToDataUrl(allInOne.mediaFileInput.files[0]);
-+      const post = { type: allInOne.typeInput.value, title: allInOne.titleInput.value.trim(), content: allInOne.contentInput.value.trim(), media: uploaded || allInOne.mediaInput.value.trim(), date: new Date().toISOString() };
-+      const posts = allInOneGetPosts();
-+      posts.unshift(post);
-+      allInOneSetPosts(posts);
-+      allInOneRender();
-+      renderSiteFeed();
-+      allInOne.titleInput.value = '';
-+      allInOne.contentInput.value = '';
-+      allInOne.mediaInput.value = '';
-+      allInOne.mediaFileInput.value = '';
-+    });
-+    allInOne.postsEl?.addEventListener('click', event => {
-+      const index = event.target.dataset.delete;
-+      if (index === undefined) return;
-+      const posts = allInOneGetPosts();
-+      posts.splice(Number(index), 1);
-+      allInOneSetPosts(posts);
-+      allInOneRender();
-+      renderSiteFeed();
-+    });
-+
-+
-+    const parallaxEls = document.querySelectorAll('[data-parallax]');
-+    const onScroll = () => {
-+      const y = window.scrollY;
-+      parallaxEls.forEach(el => {
-+        const speed = parseFloat(el.dataset.parallax || '0.15');
-+        el.style.setProperty('--parallax-y', `${y * speed}px`);
-+      });
-+    };
-+    onScroll();
-+    window.addEventListener('scroll', onScroll, { passive: true });
-+  </script>
-+</body>
-+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duraclean Solutions | Luxury Cleaning Services in Durban</title>
+  <meta name="description" content="Duraclean Solutions delivers premium residential and commercial cleaning in Durban, Umhlanga, Pinetown, and Chatsworth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Parisienne&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <a class="whatsapp-float" href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20cleaning%20quote." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.26c-.27-.13-1.6-.79-1.85-.88-.25-.1-.43-.13-.61.13-.18.26-.7.88-.85 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.31-.79-.7-1.33-1.57-1.49-1.83-.16-.26-.02-.4.12-.53.12-.12.27-.31.4-.46.13-.16.18-.26.27-.43.09-.18.04-.33-.02-.46-.07-.13-.61-1.46-.84-2-.22-.52-.45-.45-.61-.46h-.52c-.18 0-.46.07-.7.33-.24.26-.91.89-.91 2.16 0 1.28.93 2.51 1.06 2.68.13.18 1.82 2.78 4.41 3.89.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.12-.25-.18-.52-.31Z"/><path d="M16 3C8.84 3 3 8.84 3 16c0 2.29.6 4.51 1.75 6.47L3 29l6.72-1.72A12.94 12.94 0 0 0 16 29c7.16 0 13-5.84 13-13S23.16 3 16 3Zm0 23.67c-2.04 0-3.95-.6-5.55-1.64l-.4-.26-3.99 1.02 1.06-3.89-.26-.4A10.59 10.59 0 0 1 5.33 16c0-5.88 4.79-10.67 10.67-10.67S26.67 10.12 26.67 16 21.88 26.67 16 26.67Z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <header class="hero" data-parallax="0.25">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=2000&q=80" alt="Professional South African cleaning team preparing a luxury living space" />
+    <div class="hero-overlay"></div>
+
+    <nav class="nav container glass reveal">
+      <div class="logo">Duraclean <span>Solutions</span></div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menuPanel" aria-label="Open menu"><span></span><span></span></button>
+      <div id="menuPanel" class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#proof">Results</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="btn btn-outline">Book Now</a>
+      </div>
+    </nav>
+
+    <div class="hero-content container reveal delay-1">
+      <p class="eyebrow">Durban • Umhlanga • Pinetown • Chatsworth</p>
+      <h1>Where Precision <em>Meets</em> Calm.</h1>
+      <p class="signature">crafted care for homes & workspaces</p>
+      <p class="subtitle">A premium, reliable cleaning experience for residences and businesses—with eco-safe products, punctual teams, and uncompromising detail.</p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn btn-gold">Get Instant Quote Guide</a>
+        <a href="#proof" class="btn btn-ghost">See Real Results</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="trustbar container reveal">
+      <article><strong>48h</strong><p>Quick booking turnaround</p></article>
+      <article><strong>Eco-Safe</strong><p>Family and workspace friendly products</p></article>
+      <article><strong>Checklist QA</strong><p>Supervisor quality verification</p></article>
+      <article><strong>Insured Team</strong><p>Reliable, vetted professionals</p></article>
+    </section>
+
+    <section id="services" class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Signature Services</p>
+        <h2>Elevated Cleaning for Every Environment</h2>
+        <p class="subtitle">Commercial/Industrial • Deep Cleaning • Pavement Cleaning • Garden Refuse Removal • Grass Cutting • Move In/Out • Pre/Post Event.</p>
+      </div>
+      <div class="cards">
+        <article class="card glass reveal delay-1"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22h16M6 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17"/></svg></div><h3>Commercial / Industrial Cleaning</h3><p>Professional cleaning for offices, stores, warehouses, and industrial workspaces.</p></article>
+        <article class="card glass reveal delay-2"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></div><h3>Deep Cleaning</h3><p>Detailed top-to-bottom cleaning for kitchens, bathrooms, living spaces, and high-touch areas.</p></article>
+        <article class="card glass reveal delay-3"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 16l2-8h8l2 8M9 8V5h6v3"/></svg></div><h3>Pavement Cleaning</h3><p>Exterior pavement washing and stain removal to restore a clean, welcoming entrance.</p></article>
+        <article class="card glass reveal delay-1"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14M7 20V9l5-4 5 4v11M10 20v-5h4v5"/></svg></div><h3>Move In / Move Out Tenant Cleaning</h3><p>Full property reset for tenants and landlords before handover or occupancy.</p></article>
+        <article class="card glass reveal delay-2"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19c4-2 5-7 8-10 2 2 3 5 8 6-3 1-5 4-8 7-3-2-5-2-8-3z"/></svg></div><h3>Garden Refuse Collection & Removal</h3><p>Bagging, loading, and responsible removal of grass cuttings, branches, and garden waste.</p></article>
+        <article class="card glass reveal delay-3"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h14M6 16h12M8 12h8M9 8h6"/></svg></div><h3>Grass Cutting</h3><p>Routine lawn cutting and edging to keep residential and business gardens neat.</p></article>
+        <article class="card glass reveal delay-1"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg></div><h3>Pre / Post Event Cleaning</h3><p>Venue setup refresh before events and rapid, thorough cleanup once events are done.</p></article>
+      </div>
+    </section>
+
+    <section id="proof" class="section visual-band" data-parallax="0.18">
+      <img src="assets/before-after/post-construction-after.svg" alt="Cleaned post-construction Durban property exterior" />
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Before / After</p>
+          <h2>Post-Construction Patio Reset</h2>
+          <p class="subtitle">Drag the handle to compare the messy construction handover with the clean, client-ready finish.</p>
+        </div>
+        <div class="ba-slider glass reveal" data-before="assets/before-after/post-construction-before.svg" data-after="assets/before-after/post-construction-after.svg">
+          <img src="assets/before-after/post-construction-after.svg" alt="After: spotless patio and exterior after Duraclean post-construction cleanup" />
+          <div class="before-wrap" style="width:50%">
+            <img src="assets/before-after/post-construction-before.svg" alt="Before: construction rubble, dirty buckets, bricks, and residue before cleanup" />
+          </div>
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Compare before and after post-construction cleanup" />
+          <div class="ba-label before">Before cleanup</div>
+          <div class="ba-label after">After cleanup</div>
+        </div>
+        <div class="ba-thumbs reveal delay-1">
+          <figure class="glass"><img src="assets/before-after/post-construction-before.svg" alt="Before cleaning thumbnail" /><figcaption>Before: construction rubble, buckets, and residue.</figcaption></figure>
+          <figure class="glass"><img src="assets/before-after/post-construction-after.svg" alt="After cleaning thumbnail" /><figcaption>After: clear paving, clean entry, and ready-to-use exterior.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Client Voices</p>
+        <h2>Real Testimonials from Durban Clients</h2>
+      </div>
+      <div class="testimonials">
+        <article class="glass reveal delay-1"><p>“Our office finally smells and looks premium every Monday. Their punctuality is unmatched.”</p><h4>— Nomusa, Umhlanga Office Manager</h4></article>
+        <article class="glass reveal delay-2"><p>“Move-out cleaning was spotless, and we got our full deposit back. Highly recommended.”</p><h4>— Aiden, Durban North Tenant</h4></article>
+        <article class="glass reveal delay-3"><p>“They restored our post-renovation home in one day. Very professional team and supervisor.”</p><h4>— Priya, Pinetown Homeowner</h4></article>
+      </div>
+    </section>
+
+    <section id="pricing" class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">What Visitors Need Next</p>
+        <h2>Clear Packages + Strong Next Step</h2>
+      </div>
+      <div class="pricing-grid">
+        <article class="glass reveal"><h3>Home Refresh</h3><p>from <strong>R600</strong></p><ul><li>Bedrooms, kitchen, bathrooms</li><li>Dust, sanitize, finish touches</li><li>Ideal weekly/bi-weekly</li></ul><a href="#contact" class="btn btn-outline">Request Booking</a></article>
+        <article class="glass reveal delay-1 featured"><h3>Business Essential</h3><p>from <strong>R1,500</strong></p><ul><li>Workstations and common areas</li><li>Restroom hygiene standard</li><li>Supervisor quality check</li></ul><a href="#contact" class="btn btn-gold">Get Commercial Quote</a></article>
+        <article class="glass reveal delay-2"><h3>Deep Reset</h3><p>custom <strong>Quote</strong></p><ul><li>Post-construction intensive clean</li><li>Windows, floors, upholstery</li><li>Move-in / move-out ready</li></ul><a href="#contact" class="btn btn-outline">Ask on WhatsApp</a></article>
+      </div>
+    </section>
+  
+    <section id="tracker" class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Live Job Progress</p>
+        <h2>Uber-Style Service Tracker (Client View)</h2>
+        <p class="subtitle">Clients can track stage updates: Assigned → En Route → Cleaning in Progress → Completed.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="glass reveal"><h3>Current Status</h3><p><strong>En Route</strong> • ETA 24 min</p><ul><li>Assigned cleaner: Team A</li><li>Supervisor check enabled</li><li>Last update: 09:42</li></ul></article>
+        <article class="glass reveal delay-1"><h3>Service Map</h3><iframe title="Durban service map" src="https://maps.google.com/maps?q=durban&t=&z=12&ie=UTF8&iwloc=&output=embed" width="100%" height="210" style="border:0;border-radius:12px"></iframe></article>
+      </div>
+    </section>
+
+    <section id="social" class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Auto Social Feed</p>
+        <h2>New Instagram/Facebook Posts Auto-Display Here</h2>
+        <p class="subtitle">Connect your social pages using an embed tool/API once, then new posts appear automatically.</p>
+      </div>
+      <div class="glass social-panel">
+        <p><strong>Setup needed once:</strong> use Supabase for secure admin login + database storage, then connect Instagram/Facebook with Meta Graph API, Zapier, or Make.</p>
+        <p>Admin panel URL: <a href="admin.html" target="_blank">Open Admin Studio</a> • Setup guide: <a href="SUPABASE_ADMIN_SETUP.md" target="_blank">Supabase Admin Guide</a></p>
+        <p>Website ZIP file: <a class="plain-download" href="duraclean-website.zip" download>download duraclean-website.zip</a></p>
+        <div id="siteFeed" class="site-feed" aria-live="polite"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div><h2>Duraclean Solutions</h2><p>Luxury-level cleaning for homes, offices, schools, and retail spaces across Durban.</p></div>
+      <div><h4>Fast Contact</h4><p>WhatsApp: +27 70 484 4283<br/>Phone: +27 70 484 4283</p></div>
+      <div><h4>Book Today</h4><p>Tell us your area, property type, and preferred date.<br/>We’ll confirm quickly.</p><p class="download-row">ZIP: <a class="plain-download" href="duraclean-website.zip" download>download duraclean-website.zip</a></p></div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const panel = document.getElementById('menuPanel');
+    if (toggle && panel) {
+      toggle.addEventListener('click', () => {
+        const open = panel.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        panel.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
+
+    const range = document.querySelector('.ba-range');
+    const beforeWrap = document.querySelector('.before-wrap');
+    if (range && beforeWrap) {
+      range.addEventListener('input', e => beforeWrap.style.width = `${e.target.value}%`);
+    }
+
+    const renderSiteFeed = () => {
+      const feed = document.getElementById('siteFeed');
+      if (!feed) return;
+      const posts = JSON.parse(localStorage.getItem('duraclean_posts') || '[]');
+      feed.innerHTML = posts.length
+        ? posts.slice(0, 3).map(post => {
+          const title = String(post.title || 'Duraclean update').replace(/[<>&]/g, char => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[char]));
+          const content = String(post.content || '').replace(/[<>&]/g, char => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[char]));
+          const media = String(post.media || '');
+          const safeMedia = media.replace(/[<>&"']/g, char => ({'<':'&lt;','>':'&gt;','&':'&amp;','\"':'&quot;',"'":'&#039;'}[char]));
+          const isImage = media.startsWith('data:image') || /\.(png|jpe?g|webp|gif|svg)(\?.*)?$/i.test(media);
+          const image = media && isImage ? `<img src="${safeMedia}" alt="${title}" />` : '';
+          return `<article>${image}<strong>${title}</strong><p>${content}</p></article>`;
+        }).join('')
+        : '<p class="feed-empty">No local admin posts yet. Publish from Admin Studio to preview the feed on this device.</p>';
+    };
+    renderSiteFeed();
+
+    const parallaxEls = document.querySelectorAll('[data-parallax]');
+    const onScroll = () => {
+      const y = window.scrollY;
+      parallaxEls.forEach(el => {
+        const speed = parseFloat(el.dataset.parallax || '0.15');
+        el.style.setProperty('--parallax-y', `${y * speed}px`);
+      });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  </script>
+</body>
+</html>

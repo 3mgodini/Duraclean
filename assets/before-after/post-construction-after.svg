@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">After post-construction cleanup</title>
+  <desc id="desc">A Durban hillside home exterior after cleaning, with a clear patio, spotless paving, and sunset sea view.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ffe1a4"/><stop offset=".42" stop-color="#f28a3c"/><stop offset="1" stop-color="#bac7d3"/></linearGradient>
+    <linearGradient id="wall" x1="0" x2="1"><stop offset="0" stop-color="#c4bbb2"/><stop offset="1" stop-color="#6e6b6d"/></linearGradient>
+    <linearGradient id="paving" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#d7d1c8"/><stop offset="1" stop-color="#a69d93"/></linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="145" cy="365" r="68" fill="#ffd56f" opacity=".96"/>
+  <path d="M0 530 C260 470 430 560 650 510 C810 475 920 515 1080 480 C1230 450 1400 505 1600 470 L1600 900 L0 900 Z" fill="#657180" opacity=".48"/>
+  <g opacity=".36" fill="#737b88"><rect x="490" y="435" width="38" height="86"/><rect x="545" y="460" width="28" height="64"/><rect x="615" y="420" width="42" height="105"/><rect x="680" y="455" width="28" height="72"/></g>
+  <rect x="0" y="585" width="1600" height="315" fill="url(#paving)"/>
+  <path d="M0 620 C280 610 520 632 760 612 C1040 592 1330 600 1600 585 L1600 900 L0 900 Z" fill="#c7beb4" opacity=".7"/>
+  <g opacity=".2" stroke="#8f867d" stroke-width="2"><path d="M0 690 H1600"/><path d="M0 770 H1600"/><path d="M120 585 L30 900"/><path d="M390 585 L330 900"/><path d="M690 585 L665 900"/><path d="M980 585 L990 900"/><path d="M1260 585 L1320 900"/></g>
+  <polygon points="650,120 1600,0 1600,805 640,805 640,255" fill="url(#wall)"/>
+  <polygon points="625,250 1600,82 1600,125 670,300" fill="#2c2928"/>
+  <rect x="780" y="275" width="175" height="245" fill="#111820"/><rect x="800" y="300" width="135" height="190" fill="#65717d" opacity=".45"/>
+  <rect x="1075" y="210" width="145" height="330" fill="#16191f"/><rect x="1095" y="235" width="105" height="270" fill="#67717c" opacity=".42"/>
+  <rect x="1325" y="198" width="190" height="360" fill="#11141a"/><rect x="1350" y="225" width="145" height="300" fill="#65717d" opacity=".42"/>
+  <rect x="760" y="532" width="830" height="70" fill="#d6cdc3"/>
+  <rect x="720" y="602" width="880" height="95" fill="#bca98f"/>
+  <g stroke="#927c62" stroke-width="3" opacity=".5"><path d="M720 630 H1600"/><path d="M720 665 H1600"/><path d="M850 602 V697"/><path d="M1010 602 V697"/><path d="M1170 602 V697"/><path d="M1330 602 V697"/><path d="M1490 602 V697"/></g>
+  <rect x="0" y="0" width="1600" height="900" fill="#fff" opacity=".05"/>
+</svg>

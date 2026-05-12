@@ -60,9 +60,11 @@ h1 em { font-family: 'Playfair Display', serif; font-style: italic; color: var(-
 .footer p { color: var(--muted); }
 .whatsapp-float { position: fixed; right: 18px; bottom: 18px; z-index: 99; background: #25d366; color:#042b12; border-radius:999px; padding:.6rem .9rem; display:flex; gap:.45rem; align-items:center; text-decoration:none; font-weight:700; box-shadow: 0 12px 25px rgba(0,0,0,.35); }
 .whatsapp-float svg { width:20px; height:20px; fill: currentColor; }
-.reveal { opacity: 0; transform: translateY(20px); animation: fadeUp .9s ease forwards; }
-.delay-1 { animation-delay: .15s; } .delay-2 { animation-delay: .3s; } .delay-3 { animation-delay: .45s; }
-@keyframes fadeUp { to { opacity: 1; transform: translateY(0);} }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.delay-1.visible { transition-delay: .15s; }
+.delay-2.visible { transition-delay: .3s; }
+.delay-3.visible { transition-delay: .45s; }
 @media (max-width: 860px) {
   .menu-toggle { display: block; }
   .nav { border-radius: 18px; position: relative; }
@@ -82,6 +84,6 @@ h1 em { font-family: 'Playfair Display', serif; font-style: italic; color: var(-
 .feed-empty { color: var(--muted); margin-bottom: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
   .card:hover, .pricing-grid .featured { transform: none; }
 }

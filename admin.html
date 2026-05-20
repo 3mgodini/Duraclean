@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duraclean Admin Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--gold:#d9b278;--panel:#1b1b1b;--line:#2f2f2f;--muted:#bbb}
+    body{font-family:Inter,sans-serif;background:#111;color:#fff;margin:0;padding:20px}
+    .wrap{max-width:980px;margin:0 auto}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:14px}
+    input,textarea,select{width:100%;padding:11px;border-radius:12px;border:1px solid #3d3d3d;background:#0f0f0f;color:#fff;margin-top:8px}label{display:block;margin:.7rem 0}.hint,p{color:var(--muted)}
+    button,.button{border:0;background:var(--gold);color:#18120b;padding:10px 14px;border-radius:999px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}.danger{background:#442222;color:#ffd4d4;border:1px solid #714040}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.hidden{display:none}.post{border-top:1px solid #2a2a2a;padding-top:12px;margin-top:12px}.post img{width:100%;max-height:220px;object-fit:cover;border-radius:14px;margin:.6rem 0}.actions{display:flex;gap:.6rem;flex-wrap:wrap}.topbar{display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <h1>Duraclean Admin Studio</h1>
+      <a class="button" href="index.html">View Website</a>
+    </div>
+    <div id="login" class="card">
+      <h3>Admin Login</h3>
+      <p>This local demo uses a simple passcode. For real admin-only access, connect Supabase Auth using the guide.</p>
+      <input id="pass" type="password" placeholder="Enter admin passcode" autocomplete="current-password" />
+      <button id="loginBtn">Open Dashboard</button>
+      <p class="hint">Demo passcode: <strong>duraclean-admin</strong></p>
+    </div>
+
+    <section id="dash" class="hidden">
+      <div class="card">
+        <h3>Post a Blog / Vlog / Gallery Update</h3>
+        <div class="grid">
+          <label>Type
+            <select id="type"><option value="blog">Blog</option><option value="vlog">Vlog</option><option value="photo">Photo</option></select>
+          </label>
+          <label>Title<input id="title" placeholder="Post title" maxlength="80" /></label>
+        </div>
+        <label>Caption / Blog Summary<textarea id="content" rows="4" placeholder="Write a short caption or blog summary" maxlength="700"></textarea></label>
+        <div class="grid">
+          <label>Image / Video URL<input id="media" placeholder="https://..." /></label>
+          <label>Or Upload Image<input id="mediaFile" type="file" accept="image/*" /></label>
+        </div>
+        <div class="actions">
+          <button id="saveBtn">Publish to Website Preview</button>
+          <a class="button" href="SUPABASE_ADMIN_SETUP.md" target="_blank">Supabase Setup Guide</a>
+        </div>
+        <p class="hint">Local preview posts are stored only in this browser. Supabase makes posts secure, shared, and permanent.</p>
+      </div>
+      <div class="card">
+        <h3>Published Feed Preview</h3>
+        <div id="posts"></div>
+      </div>
+    </section>
+  </div>
+
+<script>
+const ADMIN_PASS = 'duraclean-admin';
+const login = document.getElementById('login');
+const dash = document.getElementById('dash');
+const postsEl = document.getElementById('posts');
+const passInput = document.getElementById('pass');
+const typeInput = document.getElementById('type');
+const titleInput = document.getElementById('title');
+const contentInput = document.getElementById('content');
+const mediaInput = document.getElementById('media');
+const mediaFileInput = document.getElementById('mediaFile');
+
+const escapeHtml = value => String(value || '').replace(/[<>&"']/g, char => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#039;'}[char]));
+const getPosts = () => JSON.parse(localStorage.getItem('duraclean_posts') || '[]');
+const setPosts = posts => localStorage.setItem('duraclean_posts', JSON.stringify(posts));
+
+function render(){
+  const posts = getPosts();
+  postsEl.innerHTML = posts.length ? posts.map((post,index) => {
+    const media = String(post.media || '');
+    const safeMedia = escapeHtml(media);
+    const image = media.startsWith('data:image') || /\.(png|jpe?g|webp|gif|svg)(\?.*)?$/i.test(media) ? `<img src="${safeMedia}" alt="${escapeHtml(post.title)}" />` : '';
+    const link = media && !image ? `<a href="${safeMedia}" target="_blank" rel="noopener noreferrer">Open media</a>` : '';
+    return `<div class="post">${image}<strong>${escapeHtml(post.title)}</strong> <small>(${escapeHtml(post.type)})</small><p>${escapeHtml(post.content)}</p>${link}<div><button class="danger" data-delete="${index}">Delete</button></div></div>`;
+  }).join('') : '<p>No posts yet.</p>';
+}
+
+function fileToDataUrl(file){
+  return new Promise(resolve => {
+    if (!file) { resolve(''); return; }
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.readAsDataURL(file);
+  });
+}
+
+document.getElementById('loginBtn').addEventListener('click', () => {
+  if (passInput.value === ADMIN_PASS) { login.classList.add('hidden'); dash.classList.remove('hidden'); render(); }
+  else alert('Wrong passcode');
+});
+
+document.getElementById('saveBtn').addEventListener('click', async () => {
+  if (!titleInput.value.trim()) { alert('Please add a title.'); return; }
+  const uploaded = await fileToDataUrl(mediaFileInput.files[0]);
+  const post = { type: typeInput.value, title: titleInput.value.trim(), content: contentInput.value.trim(), media: uploaded || mediaInput.value.trim(), date: new Date().toISOString() };
+  const posts = getPosts(); posts.unshift(post); setPosts(posts); render();
+  titleInput.value=''; contentInput.value=''; mediaInput.value=''; mediaFileInput.value='';
+});
+
+postsEl.addEventListener('click', event => {
+  const index = event.target.dataset.delete;
+  if (index === undefined) return;
+  const posts = getPosts(); posts.splice(Number(index), 1); setPosts(posts); render();
+});
+</script>
+</body>
+</html>

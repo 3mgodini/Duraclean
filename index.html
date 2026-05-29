@@ -13,10 +13,35 @@
 <body>
   <div class="noise"></div>
 
-  <a class="whatsapp-float" href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20cleaning%20quote." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.26c-.27-.13-1.6-.79-1.85-.88-.25-.1-.43-.13-.61.13-.18.26-.7.88-.85 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.31-.79-.7-1.33-1.57-1.49-1.83-.16-.26-.02-.4.12-.53.12-.12.27-.31.4-.46.13-.16.18-.26.27-.43.09-.18.04-.33-.02-.46-.07-.13-.61-1.46-.84-2-.22-.52-.45-.45-.61-.46h-.52c-.18 0-.46.07-.7.33-.24.26-.91.89-.91 2.16 0 1.28.93 2.51 1.06 2.68.13.18 1.82 2.78 4.41 3.89.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.12-.25-.18-.52-.31Z"/><path d="M16 3C8.84 3 3 8.84 3 16c0 2.29.6 4.51 1.75 6.47L3 29l6.72-1.72A12.94 12.94 0 0 0 16 29c7.16 0 13-5.84 13-13S23.16 3 16 3Zm0 23.67c-2.04 0-3.95-.6-5.55-1.64l-.4-.26-3.99 1.02 1.06-3.89-.26-.4A10.59 10.59 0 0 1 5.33 16c0-5.88 4.79-10.67 10.67-10.67S26.67 10.12 26.67 16 21.88 26.67 16 26.67Z"/></svg>
-    <span>WhatsApp</span>
-  </a>
+  <!-- WhatsApp Chat Bubble -->
+  <div id="wa-bubble" style="position:fixed;bottom:24px;right:24px;z-index:999;font-family:inherit">
+    <div id="wa-popup" style="display:none;margin-bottom:12px;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.18);width:280px;overflow:hidden">
+      <div style="background:#25D366;padding:14px 16px;display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="#fff"><path d="M19.11 17.26c-.27-.13-1.6-.79-1.85-.88-.25-.1-.43-.13-.61.13-.18.26-.7.88-.85 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.31-.79-.7-1.33-1.57-1.49-1.83-.16-.26-.02-.4.12-.53.12-.12.27-.31.4-.46.13-.16.18-.26.27-.43.09-.18.04-.33-.02-.46-.07-.13-.61-1.46-.84-2-.22-.52-.45-.45-.61-.46h-.52c-.18 0-.46.07-.7.33-.24.26-.91.89-.91 2.16 0 1.28.93 2.51 1.06 2.68.13.18 1.82 2.78 4.41 3.89.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.12-.25-.18-.52-.31Z"/><path d="M16 3C8.84 3 3 8.84 3 16c0 2.29.6 4.51 1.75 6.47L3 29l6.72-1.72A12.94 12.94 0 0 0 16 29c7.16 0 13-5.84 13-13S23.16 3 16 3Zm0 23.67c-2.04 0-3.95-.6-5.55-1.64l-.4-.26-3.99 1.02 1.06-3.89-.26-.4A10.59 10.59 0 0 1 5.33 16c0-5.88 4.79-10.67 10.67-10.67S26.67 10.12 26.67 16 21.88 26.67 16 26.67Z"/></svg>
+        </div>
+        <div style="flex:1;min-width:0">
+          <p style="margin:0;font-size:14px;font-weight:600;color:#fff">Duraclean Solutions</p>
+          <p style="margin:0;font-size:11px;color:rgba(255,255,255,.85)">&#9679; Typically replies within minutes</p>
+        </div>
+        <button onclick="toggleWA()" style="background:none;border:none;color:#fff;font-size:22px;cursor:pointer;line-height:1;padding:0">&times;</button>
+      </div>
+      <div style="padding:16px;background:#ece5dd">
+        <div style="background:#fff;border-radius:0 12px 12px 12px;padding:10px 14px;font-size:13px;color:#333;line-height:1.6;box-shadow:0 1px 2px rgba(0,0,0,.1)">
+          Hi there! &#128075; Welcome to Duraclean Solutions.<br><br>How can we help you today?
+          <p style="margin:4px 0 0;font-size:10px;color:#999;text-align:right">Duraclean &#10003;&#10003;</p>
+        </div>
+      </div>
+      <div style="padding:12px 16px;display:flex;flex-direction:column;gap:8px;background:#fff">
+        <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20residential%20cleaning%20quote." target="_blank" rel="noopener" style="background:#f0f0f0;border-radius:20px;padding:8px 14px;font-size:13px;color:#333;text-decoration:none;text-align:center">&#127968; Residential cleaning quote</a>
+        <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20commercial%20cleaning%20quote." target="_blank" rel="noopener" style="background:#f0f0f0;border-radius:20px;padding:8px 14px;font-size:13px;color:#333;text-decoration:none;text-align:center">&#127970; Commercial / office cleaning</a>
+        <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20specialist%20cleaning%20service." target="_blank" rel="noopener" style="background:#f0f0f0;border-radius:20px;padding:8px 14px;font-size:13px;color:#333;text-decoration:none;text-align:center">&#10024; Deep clean / specialist service</a>
+      </div>
+    </div>
+    <button onclick="toggleWA()" id="wa-btn" aria-label="Chat with us on WhatsApp" style="width:58px;height:58px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff"><path d="M19.11 17.26c-.27-.13-1.6-.79-1.85-.88-.25-.1-.43-.13-.61.13-.18.26-.7.88-.85 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.31-.79-.7-1.33-1.57-1.49-1.83-.16-.26-.02-.4.12-.53.12-.12.27-.31.4-.46.13-.16.18-.26.27-.43.09-.18.04-.33-.02-.46-.07-.13-.61-1.46-.84-2-.22-.52-.45-.45-.61-.46h-.52c-.18 0-.46.07-.7.33-.24.26-.91.89-.91 2.16 0 1.28.93 2.51 1.06 2.68.13.18 1.82 2.78 4.41 3.89.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.12-.25-.18-.52-.31Z"/><path d="M16 3C8.84 3 3 8.84 3 16c0 2.29.6 4.51 1.75 6.47L3 29l6.72-1.72A12.94 12.94 0 0 0 16 29c7.16 0 13-5.84 13-13S23.16 3 16 3Zm0 23.67c-2.04 0-3.95-.6-5.55-1.64l-.4-.26-3.99 1.02 1.06-3.89-.26-.4A10.59 10.59 0 0 1 5.33 16c0-5.88 4.79-10.67 10.67-10.67S26.67 10.12 26.67 16 21.88 26.67 16 26.67Z"/></svg>
+    </button>
+  </div>
 
   <header class="hero" data-parallax="0.25">
     <img class="hero-bg" src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=2000&q=80" alt="Professional South African cleaning team preparing a luxury living space" />
@@ -29,6 +54,7 @@
         <a href="#services">Services</a>
         <a href="#proof">Results</a>
         <a href="#pricing">Pricing</a>
+        <a href="#blog">Tips</a>
         <a href="#contact" class="btn btn-outline">Book Now</a>
       </div>
     </nav>
@@ -111,6 +137,22 @@
         <p class="eyebrow">Transparent Pricing</p>
         <h2>Clear Packages. Strong Results.</h2>
       </div>
+
+      <!-- Comparison table -->
+      <div class="reveal" style="overflow-x:auto;margin-bottom:2.5rem">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:560px">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.15);color:var(--gold);font-weight:600;width:40%">What's included</th>
+              <th style="padding:12px 8px;border-bottom:1px solid rgba(255,255,255,.15);text-align:center;color:rgba(255,255,255,.7);font-weight:500">Home Refresh</th>
+              <th style="padding:12px 8px;border-bottom:2px solid var(--gold);text-align:center;color:var(--gold);font-weight:600;background:rgba(196,161,90,.08)">Business Essential</th>
+              <th style="padding:12px 8px;border-bottom:1px solid rgba(255,255,255,.15);text-align:center;color:rgba(255,255,255,.7);font-weight:500">Deep Reset</th>
+            </tr>
+          </thead>
+          <tbody id="compare-body"></tbody>
+        </table>
+      </div>
+
       <div class="pricing-grid">
         <article class="glass reveal"><h3>Home Refresh</h3><p>from <strong>R600</strong></p><ul><li>Bedrooms, kitchen, bathrooms</li><li>Dust, sanitize, finish touches</li><li>Ideal weekly/bi-weekly</li></ul><a href="#contact" class="btn btn-outline">Request Booking</a></article>
         <article class="glass reveal delay-1 featured"><h3>Business Essential</h3><p>from <strong>R1,500</strong></p><ul><li>Workstations and common areas</li><li>Restroom hygiene standard</li><li>Supervisor quality check</li></ul><a href="#contact" class="btn btn-gold">Get Commercial Quote</a></article>
@@ -118,7 +160,34 @@
       </div>
     </section>
 
-  </main>
+    <!-- Blog / Cleaning Tips -->
+    <section id="blog" class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Cleaning Tips</p>
+        <h2>Advice from the Duraclean Team</h2>
+        <p class="subtitle">Practical tips to keep your home and workspace cleaner between professional visits.</p>
+      </div>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+        <article class="card glass reveal delay-1" style="cursor:default">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0M12 8v4l3 3"/></svg></div>
+          <p class="eyebrow" style="margin-bottom:.4rem">Humidity &amp; Mould</p>
+          <h3>Fighting Mould in Durban&rsquo;s Humid Climate</h3>
+          <p>Durban&rsquo;s coastal humidity creates ideal mould conditions. Wipe bathroom tiles weekly with a white vinegar solution (1:1 with water), keep windows open for 20 minutes after showers, and check behind furniture against exterior walls monthly. Catch it early &mdash; mould spreads fast in KZN summers.</p>
+        </article>
+        <article class="card glass reveal delay-2" style="cursor:default">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6zM9 12h6M12 9v6"/></svg></div>
+          <p class="eyebrow" style="margin-bottom:.4rem">Post-Construction</p>
+          <h3>Your Post-Renovation Cleaning Checklist</h3>
+          <p>After any building work: (1) Seal vents before sweeping to stop dust resettling. (2) Vacuum all surfaces top-down &mdash; ceiling fans before floors. (3) Wipe walls with a damp microfibre before painting touch-ups. (4) Clean window tracks and frames last &mdash; they trap the most grit. For heavy jobs, call us.</p>
+        </article>
+        <article class="card glass reveal delay-3" style="cursor:default">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22h16M6 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17M9 8h6M9 12h6M9 16h4"/></svg></div>
+          <p class="eyebrow" style="margin-bottom:.4rem">Office Hygiene</p>
+          <h3>5 Office Spots Most Cleaners Miss</h3>
+          <p>Keyboard trays, monitor backs, cable bundles, under-desk surfaces, and the bottom edge of office chairs harbour dust and bacteria that routine cleaning skips. Disinfect keyboards monthly, cable-wipe quarterly. A cleaner office reduces sick days &mdash; studies show workplaces with regular deep cleans see up to 30% fewer illness-related absences.</p>
+        </article>
+      </div>
+    </section>
 
   <footer id="contact" class="footer">
     <div class="container footer-grid">
@@ -129,7 +198,50 @@
   </footer>
 
   <script>
-    // Mobile menu
+    // WhatsApp chat bubble toggle
+    function toggleWA() {
+      var popup = document.getElementById('wa-popup');
+      popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+    }
+    // Open bubble after 4 seconds on first visit
+    setTimeout(function() {
+      if (!sessionStorage.getItem('wa-shown')) {
+        document.getElementById('wa-popup').style.display = 'block';
+        sessionStorage.setItem('wa-shown', '1');
+      }
+    }, 4000);
+
+    // Pricing comparison table
+    var rows = [
+      ['Bedrooms &amp; living areas', '&#10003;', '&#10003;', '&#10003;'],
+      ['Kitchen &amp; bathrooms', '&#10003;', '&#10003;', '&#10003;'],
+      ['Workstations &amp; common areas', '&ndash;', '&#10003;', '&#10003;'],
+      ['Restroom hygiene standard', '&ndash;', '&#10003;', '&#10003;'],
+      ['Supervisor quality check', '&ndash;', '&#10003;', '&#10003;'],
+      ['Windows, floors &amp; upholstery', '&ndash;', '&ndash;', '&#10003;'],
+      ['Post-construction intensive', '&ndash;', '&ndash;', '&#10003;'],
+      ['Forensic / decontamination add-on', '&ndash;', '&ndash;', '&#10003;'],
+      ['Eco-safe products', '&#10003;', '&#10003;', '&#10003;'],
+      ['Starting price', 'R600', 'R1,500', 'Custom'],
+    ];
+    var tbody = document.getElementById('compare-body');
+    if (tbody) {
+      rows.forEach(function(r, i) {
+        var tr = document.createElement('tr');
+        tr.style.borderBottom = '1px solid rgba(255,255,255,.07)';
+        r.forEach(function(cell, ci) {
+          var td = document.createElement('td');
+          td.innerHTML = cell;
+          td.style.padding = '10px ' + (ci === 0 ? '16px' : '8px');
+          td.style.textAlign = ci === 0 ? 'left' : 'center';
+          td.style.color = cell === '&#10003;' ? '#7ecb8f' : cell === '&ndash;' ? 'rgba(255,255,255,.25)' : 'rgba(255,255,255,.85)';
+          if (ci === 2) td.style.background = 'rgba(196,161,90,.06)';
+          if (ci === 0) td.style.color = 'rgba(255,255,255,.75)';
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    }
     const toggle = document.querySelector('.menu-toggle');
     const panel  = document.getElementById('menuPanel');
     if (toggle && panel) {

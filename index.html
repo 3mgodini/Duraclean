@@ -55,7 +55,7 @@
         <a href="#proof">Results</a>
         <a href="#pricing">Pricing</a>
         <a href="#blog">Tips</a>
-        <a href="#contact" class="btn btn-outline">Book Now</a>
+        <a href="#book" class="btn btn-outline">Book Now</a>
       </div>
     </nav>
 
@@ -178,18 +178,133 @@
           <div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6zM9 12h6M12 9v6"/></svg></div>
           <p class="eyebrow" style="margin-bottom:.4rem">Post-Construction</p>
           <h3>Your Post-Renovation Cleaning Checklist</h3>
-          <p>After any building work: (1) Seal vents before sweeping to stop dust resettling. (2) Vacuum all surfaces top-down &mdash; ceiling fans before floors. (3) Wipe walls with a damp microfibre before painting touch-ups. (4) Clean window tracks and frames last &mdash; they trap the most grit. For heavy jobs, call us.</p>
+          <p>After any building work: seal vents before sweeping to stop dust resettling. Vacuum all surfaces top-down, starting with ceiling fans before you touch the floors. Wipe walls with a damp microfibre before any painting touch-ups. Clean window tracks and frames last because they trap the most grit. For heavy jobs, give us a call.</p>
         </article>
         <article class="card glass reveal delay-3" style="cursor:default">
           <div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22h16M6 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17M9 8h6M9 12h6M9 16h4"/></svg></div>
           <p class="eyebrow" style="margin-bottom:.4rem">Office Hygiene</p>
           <h3>5 Office Spots Most Cleaners Miss</h3>
-          <p>Keyboard trays, monitor backs, cable bundles, under-desk surfaces, and the bottom edge of office chairs harbour dust and bacteria that routine cleaning skips. Disinfect keyboards monthly, cable-wipe quarterly. A cleaner office reduces sick days &mdash; studies show workplaces with regular deep cleans see up to 30% fewer illness-related absences.</p>
+          <p>Keyboard trays, monitor backs, cable bundles, under-desk surfaces and the bottom edge of office chairs collect dust and bacteria that routine cleaning skips right past. Disinfect keyboards monthly and wipe down cables quarterly. A cleaner office genuinely reduces sick days. Workplaces with regular deep cleans see noticeably fewer illness-related absences, and your team feels the difference.</p>
         </article>
       </div>
     </section>
 
-  <footer id="contact" class="footer">
+    <!-- Booking Form -->
+    <section id="book" class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Get a Quote</p>
+        <h2>Tell Us About Your Space</h2>
+        <p class="subtitle">Fill in the form and we will get back to you within a few hours, usually much sooner.</p>
+      </div>
+      <div class="glass reveal" style="max-width:640px;margin:0 auto;padding:2.5rem 2rem;border-radius:20px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div style="display:flex;flex-direction:column;gap:.4rem">
+            <label style="font-size:13px;color:rgba(255,255,255,.6)">Your name</label>
+            <input id="bk-name" type="text" placeholder="e.g. Thandi Mokoena" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.4rem">
+            <label style="font-size:13px;color:rgba(255,255,255,.6)">WhatsApp number</label>
+            <input id="bk-phone" type="tel" placeholder="+27 ..." style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.4rem">
+            <label style="font-size:13px;color:rgba(255,255,255,.6)">Suburb</label>
+            <input id="bk-area" type="text" placeholder="e.g. Umhlanga, Pinetown" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.4rem">
+            <label style="font-size:13px;color:rgba(255,255,255,.6)">Preferred date</label>
+            <input id="bk-date" type="date" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;color-scheme:dark" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.4rem;grid-column:1/-1">
+            <label style="font-size:13px;color:rgba(255,255,255,.6)">Service needed</label>
+            <select id="bk-service" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;appearance:none;color-scheme:dark">
+              <option value="">Select a service...</option>
+              <option>Home Deep Clean</option>
+              <option>Commercial / Office Cleaning</option>
+              <option>Post-Construction Clean</option>
+              <option>Move In / Move Out</option>
+              <option>Garden Refuse Removal</option>
+              <option>Grass Cutting</option>
+              <option>Pre / Post Event Clean</option>
+              <option>Decontamination / Forensic</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.4rem;grid-column:1/-1">
+            <label style="font-size:13px;color:rgba(255,255,255,.6)">Anything else we should know? <span style="opacity:.5">(optional)</span></label>
+            <textarea id="bk-notes" rows="3" placeholder="Size of the space, specific problem areas, access instructions..." style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;resize:vertical;font-family:inherit"></textarea>
+          </div>
+        </div>
+        <button onclick="submitBooking()" style="margin-top:1.5rem;width:100%;padding:14px;background:var(--gold);color:#1a1208;font-weight:700;font-size:15px;border:none;border-radius:10px;cursor:pointer;letter-spacing:.03em;transition:opacity .2s" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Send Booking Request via WhatsApp</button>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);text-align:center;margin-top:.8rem">This opens WhatsApp with your details pre-filled. No app needed on desktop.</p>
+      </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">About Us</p>
+        <h2>A Real Team. A Real Business.</h2>
+        <p class="subtitle">Duraclean Solutions is a registered South African cleaning company serving Durban and surrounding areas. We are fully insured, use eco-safe products, and every job is signed off by a supervisor before we leave.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem">
+        <div class="glass reveal delay-1" style="padding:1.5rem;border-radius:16px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:.5rem">&#127973;</div>
+          <h4 style="margin:0 0 .3rem;font-size:15px">Registered Business</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0">CIPC registered South African company</p>
+        </div>
+        <div class="glass reveal delay-2" style="padding:1.5rem;border-radius:16px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:.5rem">&#128737;</div>
+          <h4 style="margin:0 0 .3rem;font-size:15px">Fully Insured</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0">Public liability cover on every job</p>
+        </div>
+        <div class="glass reveal delay-3" style="padding:1.5rem;border-radius:16px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:.5rem">&#127807;</div>
+          <h4 style="margin:0 0 .3rem;font-size:15px">Eco-Safe Products</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0">Safe for kids, pets and the environment</p>
+        </div>
+        <div class="glass reveal delay-1" style="padding:1.5rem;border-radius:16px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:.5rem">&#9989;</div>
+          <h4 style="margin:0 0 .3rem;font-size:15px">Supervisor Sign-Off</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0">Every job checked before we leave</p>
+        </div>
+        <div class="glass reveal delay-2" style="padding:1.5rem;border-radius:16px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:.5rem">&#128205;</div>
+          <h4 style="margin:0 0 .3rem;font-size:15px">Based in Durban</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0">Local team, fast response times</p>
+        </div>
+        <div class="glass reveal delay-3" style="padding:1.5rem;border-radius:16px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:.5rem">&#128222;</div>
+          <h4 style="margin:0 0 .3rem;font-size:15px">Always Reachable</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);margin:0">WhatsApp us any time, 7 days a week</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="section container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Where We Work</p>
+        <h2>Durban and Surrounding Areas</h2>
+        <p class="subtitle">Not sure if we cover your suburb? Just ask, we cover more than what is listed here.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center" class="reveal">
+        <span class="area-pill">Durban CBD</span>
+        <span class="area-pill">Umhlanga</span>
+        <span class="area-pill">Pinetown</span>
+        <span class="area-pill">Chatsworth</span>
+        <span class="area-pill">Westville</span>
+        <span class="area-pill">Hillcrest</span>
+        <span class="area-pill">Ballito</span>
+        <span class="area-pill">Phoenix</span>
+        <span class="area-pill">Tongaat</span>
+        <span class="area-pill">Amanzimtoti</span>
+        <span class="area-pill">Berea</span>
+        <span class="area-pill">Musgrave</span>
+        <span class="area-pill">La Lucia</span>
+        <span class="area-pill">Morningside</span>
+        <span class="area-pill gold-pill">Your area? Ask us</span>
+      </div>
+    </section>
     <div class="container footer-grid">
       <div><h2>Duraclean Solutions</h2><p>Luxury-level cleaning for homes, offices, schools, and retail spaces across Durban.</p></div>
       <div><h4>Fast Contact</h4><p>WhatsApp: <a href="https://wa.me/27704844283" style="color:var(--gold)">+27 70 484 4283</a><br/>Phone: +27 70 484 4283</p></div>
@@ -198,7 +313,27 @@
   </footer>
 
   <script>
-    // WhatsApp chat bubble toggle
+    // Booking form -> WhatsApp
+    function submitBooking() {
+      var name    = document.getElementById('bk-name').value.trim();
+      var phone   = document.getElementById('bk-phone').value.trim();
+      var area    = document.getElementById('bk-area').value.trim();
+      var date    = document.getElementById('bk-date').value;
+      var service = document.getElementById('bk-service').value;
+      var notes   = document.getElementById('bk-notes').value.trim();
+      if (!name || !service) {
+        alert('Please fill in at least your name and the service you need.');
+        return;
+      }
+      var msg = 'Hi Duraclean! I would like to book a clean.\n\n'
+        + 'Name: ' + name + '\n'
+        + (phone   ? 'Phone: ' + phone + '\n' : '')
+        + (area    ? 'Area: ' + area + '\n' : '')
+        + (service ? 'Service: ' + service + '\n' : '')
+        + (date    ? 'Preferred date: ' + date + '\n' : '')
+        + (notes   ? 'Notes: ' + notes : '');
+      window.open('https://wa.me/27704844283?text=' + encodeURIComponent(msg), '_blank');
+    }
     function toggleWA() {
       var popup = document.getElementById('wa-popup');
       popup.style.display = popup.style.display === 'none' ? 'block' : 'none';

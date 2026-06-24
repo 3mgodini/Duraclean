@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Duraclean Solutions | Luxury Cleaning Services in Durban</title>
+  <title>Duraclean Solutions | Professional Cleaning Services in Durban</title>
   <meta name="description" content="Duraclean Solutions delivers premium residential and commercial cleaning in Durban, Umhlanga, Pinetown, and Chatsworth." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Parisienne&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="noise"></div>
 
-  <!-- WhatsApp Chat Bubble -->
+  <!-- WhatsApp Bubble -->
   <div id="wa-bubble" style="position:fixed;bottom:24px;right:24px;z-index:999;font-family:inherit">
     <div id="wa-popup" style="display:none;margin-bottom:12px;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.18);width:280px;overflow:hidden">
       <div style="background:#25D366;padding:14px 16px;display:flex;align-items:center;gap:10px">
@@ -28,57 +27,78 @@
       </div>
       <div style="padding:16px;background:#ece5dd">
         <div style="background:#fff;border-radius:0 12px 12px 12px;padding:10px 14px;font-size:13px;color:#333;line-height:1.6;box-shadow:0 1px 2px rgba(0,0,0,.1)">
-          Hi there! &#128075; Welcome to Duraclean Solutions.<br><br>How can we help you today?
+          Hi there! Welcome to Duraclean Solutions.<br><br>How can we help you today?
           <p style="margin:4px 0 0;font-size:10px;color:#999;text-align:right">Duraclean &#10003;&#10003;</p>
         </div>
       </div>
       <div style="padding:12px 16px;display:flex;flex-direction:column;gap:8px;background:#fff">
-        <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20residential%20cleaning%20quote." target="_blank" rel="noopener" style="background:#f0f0f0;border-radius:20px;padding:8px 14px;font-size:13px;color:#333;text-decoration:none;text-align:center">&#127968; Residential cleaning quote</a>
-        <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20commercial%20cleaning%20quote." target="_blank" rel="noopener" style="background:#f0f0f0;border-radius:20px;padding:8px 14px;font-size:13px;color:#333;text-decoration:none;text-align:center">&#127970; Commercial / office cleaning</a>
-        <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20specialist%20cleaning%20service." target="_blank" rel="noopener" style="background:#f0f0f0;border-radius:20px;padding:8px 14px;font-size:13px;color:#333;text-decoration:none;text-align:center">&#10024; Deep clean / specialist service</a>
+        <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20residential%20cleaning%20quote." target="_blank" rel="noopener" style="background:#f0f0f0;border-radius:20px;padding:8px 14px;font-size:13px;color:#333;text-decoration:none;text-align:center">Residential cleaning quote</a>
+        <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20commercial%20cleaning%20quote." target="_blank" rel="noopener" style="background:#f0f0f0;border-radius:20px;padding:8px 14px;font-size:13px;color:#333;text-decoration:none;text-align:center">Commercial / office cleaning</a>
+        <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20specialist%20cleaning%20service." target="_blank" rel="noopener" style="background:#f0f0f0;border-radius:20px;padding:8px 14px;font-size:13px;color:#333;text-decoration:none;text-align:center">Deep clean / specialist service</a>
       </div>
     </div>
-    <button onclick="toggleWA()" id="wa-btn" aria-label="Chat with us on WhatsApp" style="width:58px;height:58px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <button onclick="toggleWA()" id="wa-btn" aria-label="Chat on WhatsApp" style="width:58px;height:58px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:transform .2s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
       <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff"><path d="M19.11 17.26c-.27-.13-1.6-.79-1.85-.88-.25-.1-.43-.13-.61.13-.18.26-.7.88-.85 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.31-.79-.7-1.33-1.57-1.49-1.83-.16-.26-.02-.4.12-.53.12-.12.27-.31.4-.46.13-.16.18-.26.27-.43.09-.18.04-.33-.02-.46-.07-.13-.61-1.46-.84-2-.22-.52-.45-.45-.61-.46h-.52c-.18 0-.46.07-.7.33-.24.26-.91.89-.91 2.16 0 1.28.93 2.51 1.06 2.68.13.18 1.82 2.78 4.41 3.89.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.12-.25-.18-.52-.31Z"/><path d="M16 3C8.84 3 3 8.84 3 16c0 2.29.6 4.51 1.75 6.47L3 29l6.72-1.72A12.94 12.94 0 0 0 16 29c7.16 0 13-5.84 13-13S23.16 3 16 3Zm0 23.67c-2.04 0-3.95-.6-5.55-1.64l-.4-.26-3.99 1.02 1.06-3.89-.26-.4A10.59 10.59 0 0 1 5.33 16c0-5.88 4.79-10.67 10.67-10.67S26.67 10.12 26.67 16 21.88 26.67 16 26.67Z"/></svg>
     </button>
   </div>
 
-  <header class="hero" data-parallax="0.25">
-    <img class="hero-bg" src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=2000&q=80" alt="Professional South African cleaning team preparing a luxury living space" />
-    <div class="hero-overlay"></div>
-
-    <nav class="nav container glass reveal">
-      <div class="logo">Duraclean <span>Solutions</span></div>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="menuPanel" aria-label="Open menu"><span></span><span></span></button>
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <nav class="nav container">
+      <div class="logo">Dura<span>clean</span></div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menuPanel" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
       <div id="menuPanel" class="nav-links">
         <a href="#services">Services</a>
         <a href="#proof">Results</a>
         <a href="#pricing">Pricing</a>
         <a href="#blog">Tips</a>
-        <a href="#book" class="btn btn-outline">Book Now</a>
+        <a href="#book" class="btn btn-primary" style="padding:.55rem 1.2rem;font-size:.88rem">Book Now</a>
       </div>
     </nav>
+  </div>
 
-    <div class="hero-content container reveal delay-1">
+  <!-- HERO -->
+  <header class="hero">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2000&q=80" alt="Professional cleaning team at work" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content container reveal">
       <p class="eyebrow">Durban &bull; Umhlanga &bull; Pinetown &bull; Chatsworth</p>
-      <h1>Where Precision <em>Meets</em> Calm.</h1>
-      <p class="signature">crafted care for homes &amp; workspaces</p>
-      <p class="subtitle">A premium, reliable cleaning experience for residences and businesses&mdash;with eco-safe products, punctual teams, and uncompromising detail.</p>
+      <h1>Cleaning Done <span>Right.</span><br>Every Single Time.</h1>
+      <p class="subtitle">Professional residential and commercial cleaning services across Durban. Reliable teams, eco-safe products, supervisor-checked results.</p>
       <div class="hero-actions">
-        <a href="#pricing" class="btn btn-gold">Get Instant Quote Guide</a>
-        <a href="#proof" class="btn btn-ghost">See Real Results</a>
+        <a href="#book" class="btn btn-primary">Get a Free Quote</a>
+        <a href="#proof" class="btn btn-outline">See Our Work</a>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="trustbar container reveal">
-      <article><strong>48h</strong><p>Quick booking turnaround</p></article>
-      <article><strong>Eco-Safe</strong><p>Family and workspace friendly products</p></article>
-      <article><strong>Checklist QA</strong><p>Supervisor quality verification</p></article>
-      <article><strong>Insured Team</strong><p>Reliable, vetted professionals</p></article>
-    </section>
+  <!-- TRUST BAR -->
+  <div class="trustbar">
+    <div class="trustbar-inner container">
+      <div class="trustbar-item">
+        <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div><strong>Fully Insured</strong><span>Public liability on every job</span></div>
+      </div>
+      <div class="trustbar-item">
+        <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><strong>Supervisor Sign-Off</strong><span>Quality checked before we leave</span></div>
+      </div>
+      <div class="trustbar-item">
+        <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><strong>48h Booking</strong><span>Quick turnaround guaranteed</span></div>
+      </div>
+      <div class="trustbar-item">
+        <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg>
+        <div><strong>Eco-Safe Products</strong><span>Safe for kids and pets</span></div>
+      </div>
+    </div>
+  </div>
 
+  <main>
+
+    <!-- EVERYDAY SERVICES -->
     <section id="services" class="section container">
       <div class="section-heading reveal">
         <p class="eyebrow">Everyday Care</p>
@@ -86,42 +106,82 @@
         <p class="subtitle">Routine and occasional cleaning for residences, businesses, and the spaces around them.</p>
       </div>
       <div class="cards">
-        <article class="card glass reveal delay-1"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22h16M6 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17"/></svg></div><h3>Commercial / Industrial Cleaning</h3><p>Professional cleaning for offices, stores, warehouses, and industrial workspaces.</p></article>
-        <article class="card glass reveal delay-2"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></div><h3>Deep Cleaning</h3><p>Detailed top-to-bottom cleaning for kitchens, bathrooms, living spaces, and high-touch areas.</p></article>
-        <article class="card glass reveal delay-3"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 16l2-8h8l2 8M9 8V5h6v3"/></svg></div><h3>Pavement Cleaning</h3><p>Exterior pavement washing and stain removal to restore a clean, welcoming entrance.</p></article>
-        <article class="card glass reveal delay-1"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14M7 20V9l5-4 5 4v11M10 20v-5h4v5"/></svg></div><h3>Move In / Move Out Tenant Cleaning</h3><p>Full property reset for tenants and landlords before handover or occupancy.</p></article>
-        <article class="card glass reveal delay-2"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19c4-2 5-7 8-10 2 2 3 5 8 6-3 1-5 4-8 7-3-2-5-2-8-3z"/></svg></div><h3>Garden Refuse Collection &amp; Removal</h3><p>Bagging, loading, and responsible removal of grass cuttings, branches, and garden waste.</p></article>
-        <article class="card glass reveal delay-3"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h14M6 16h12M8 12h8M9 8h6"/></svg></div><h3>Grass Cutting</h3><p>Routine lawn cutting and edging to keep residential and business gardens neat.</p></article>
-        <article class="card glass reveal delay-1"><div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg></div><h3>Pre / Post Event Cleaning</h3><p>Venue setup refresh before events and rapid, thorough cleanup once events are done.</p></article>
+        <article class="card reveal delay-1">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16M6 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17"/></svg></div>
+          <h3>Commercial / Industrial Cleaning</h3>
+          <p>Professional cleaning for offices, stores, warehouses, and industrial workspaces.</p>
+        </article>
+        <article class="card reveal delay-2">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></div>
+          <h3>Deep Cleaning</h3>
+          <p>Detailed top-to-bottom cleaning for kitchens, bathrooms, living spaces, and high-touch areas.</p>
+        </article>
+        <article class="card reveal delay-3">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 16l2-8h8l2 8M9 8V5h6v3"/></svg></div>
+          <h3>Pavement Cleaning</h3>
+          <p>Exterior pavement washing and stain removal to restore a clean, welcoming entrance.</p>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20h14M7 20V9l5-4 5 4v11M10 20v-5h4v5"/></svg></div>
+          <h3>Move In / Move Out Cleaning</h3>
+          <p>Full property reset for tenants and landlords before handover or occupancy.</p>
+        </article>
+        <article class="card reveal delay-2">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19c4-2 5-7 8-10 2 2 3 5 8 6-3 1-5 4-8 7-3-2-5-2-8-3z"/></svg></div>
+          <h3>Garden Refuse Removal</h3>
+          <p>Bagging, loading, and responsible removal of cuttings, branches, and garden waste.</p>
+        </article>
+        <article class="card reveal delay-3">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19h14M6 16h12M8 12h8M9 8h6"/></svg></div>
+          <h3>Grass Cutting</h3>
+          <p>Routine lawn cutting and edging to keep residential and business gardens neat.</p>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg></div>
+          <h3>Pre / Post Event Cleaning</h3>
+          <p>Venue refresh before events and rapid thorough cleanup once the event is done.</p>
+        </article>
       </div>
-    </section>
 
-    <section id="specialist" class="section container specialist-band">
-      <div class="section-heading reveal">
-        <p class="eyebrow specialist-eyebrow">Specialist Response</p>
-        <h2>Discreet, Trained Cleanup for Sensitive Situations</h2>
-        <p class="subtitle">A separate, trained team handles these jobs with the discretion and care they require. Available by direct arrangement.</p>
-      </div>
-      <div class="cards">
-        <article class="card glass specialist-card reveal delay-1"><div class="icon-wrap specialist-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6zM9 12h6M12 9v6"/></svg></div><h3>Post-Forensic Cleanup</h3><p>Discreet specialist cleanup after forensic investigations, with careful sanitising and waste handling.</p></article>
-        <article class="card glass specialist-card reveal delay-2"><div class="icon-wrap specialist-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M5 7c4 0 10 4 14 10M19 7C15 7 9 11 5 17"/></svg></div><h3>Decontamination</h3><p>Targeted hygiene cleaning for affected areas using controlled procedures and protective equipment.</p></article>
-        <article class="card glass specialist-card reveal delay-3"><div class="icon-wrap specialist-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M6 6v14h12V6M9 10h6M9 14h6"/></svg></div><h3>Crime Scene Cleaning</h3><p>Confidential biohazard-aware cleanup support for private, commercial, and managed properties.</p></article>
-      </div>
-    </section>
-
-    <section id="proof" class="section visual-band" data-parallax="0.18">
-      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80" alt="Professional cleaners preparing supplies" />
-      <div class="overlay"></div>
-      <div class="container">
+      <!-- SPECIALIST TIER -->
+      <div class="specialist-band">
         <div class="section-heading reveal">
-          <p class="eyebrow">Before / After</p>
-          <h2>Visible Transformation You Can Trust</h2>
-          <p class="subtitle">Drag the handle to compare before and after our service.</p>
+          <p class="eyebrow specialist-eyebrow">Specialist Response</p>
+          <h2>Discreet, Trained Cleanup for Sensitive Situations</h2>
+          <p class="subtitle">A separate trained team handles these jobs with the discretion and care they require. Available by direct arrangement.</p>
         </div>
-        <div class="ba-slider glass reveal">
-          <img src="assets/before-after/after.jpg.png" alt="After: clean patio and exterior after Duraclean post-construction cleanup" />
+        <div class="cards">
+          <article class="card specialist-card reveal delay-1">
+            <div class="icon-wrap specialist-icon"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6zM9 12h6M12 9v6"/></svg></div>
+            <h3>Post-Forensic Cleanup</h3>
+            <p>Discreet specialist cleanup after forensic investigations with careful sanitising and waste handling.</p>
+          </article>
+          <article class="card specialist-card reveal delay-2">
+            <div class="icon-wrap specialist-icon"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 7c4 0 10 4 14 10M19 7C15 7 9 11 5 17"/></svg></div>
+            <h3>Decontamination</h3>
+            <p>Targeted hygiene cleaning for affected areas using controlled procedures and protective equipment.</p>
+          </article>
+          <article class="card specialist-card reveal delay-3">
+            <div class="icon-wrap specialist-icon"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M6 6v14h12V6M9 10h6M9 14h6"/></svg></div>
+            <h3>Crime Scene Cleaning</h3>
+            <p>Confidential biohazard-aware cleanup for private, commercial, and managed properties.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section id="proof" class="section section-alt">
+      <div class="container">
+        <div class="section-heading reveal center">
+          <p class="eyebrow">Real Results</p>
+          <h2>Before &amp; After Our Work</h2>
+          <p class="subtitle">Drag the handle to compare. These are real photos from an actual Duraclean job in Durban.</p>
+        </div>
+        <div class="ba-slider reveal" style="max-width:860px;margin:0 auto">
+          <img src="assets/before-after/after.jpg.png" alt="After: clean patio after Duraclean post-construction cleanup" />
           <div class="before-wrap" style="width:50%">
-            <img src="assets/before-after/before.jpg.png" alt="Before: construction rubble, buckets, and residue before cleanup" />
+            <img src="assets/before-after/before.jpg.png" alt="Before: construction site before cleanup" />
           </div>
           <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Compare before and after" />
           <div class="ba-label before">Before</div>
@@ -130,160 +190,205 @@
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
     <section class="section container">
-      <div class="section-heading reveal">
+      <div class="section-heading reveal center">
         <p class="eyebrow">Client Voices</p>
-        <h2>Real Testimonials from Durban Clients</h2>
+        <h2>What Durban Clients Say</h2>
       </div>
       <div class="testimonials">
-        <article class="glass reveal delay-1"><p>&#8220;Our office finally smells and looks premium every Monday. Their punctuality is unmatched.&#8221;</p><h4>&mdash; Nomusa, Umhlanga Office Manager</h4></article>
-        <article class="glass reveal delay-2"><p>&#8220;Move-out cleaning was spotless, and we got our full deposit back. Highly recommended.&#8221;</p><h4>&mdash; Aiden, Durban North Tenant</h4></article>
-        <article class="glass reveal delay-3"><p>&#8220;They restored our post-renovation home in one day. Very professional team and supervisor.&#8221;</p><h4>&mdash; Priya, Pinetown Homeowner</h4></article>
+        <article class="tcard reveal delay-1">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Our office finally smells and looks premium every Monday. Their punctuality is unmatched."</p>
+          <h4>Nomusa &mdash; Umhlanga Office Manager</h4>
+        </article>
+        <article class="tcard reveal delay-2">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Move-out cleaning was spotless and we got our full deposit back. Highly recommended."</p>
+          <h4>Aiden &mdash; Durban North Tenant</h4>
+        </article>
+        <article class="tcard reveal delay-3">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"They restored our post-renovation home in one day. Very professional team and supervisor."</p>
+          <h4>Priya &mdash; Pinetown Homeowner</h4>
+        </article>
       </div>
     </section>
 
-    <section id="pricing" class="section container">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Transparent Pricing</p>
-        <h2>Clear Packages. Strong Results.</h2>
-      </div>
+    <!-- PRICING -->
+    <section id="pricing" class="section section-alt">
+      <div class="container">
+        <div class="section-heading reveal center">
+          <p class="eyebrow">Transparent Pricing</p>
+          <h2>Clear Packages. Strong Results.</h2>
+        </div>
 
-      <!-- Comparison table -->
-      <div class="reveal" style="overflow-x:auto;margin-bottom:2.5rem">
-        <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:560px">
-          <thead>
-            <tr>
-              <th style="text-align:left;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.15);color:var(--gold);font-weight:600;width:40%">What's included</th>
-              <th style="padding:12px 8px;border-bottom:1px solid rgba(255,255,255,.15);text-align:center;color:rgba(255,255,255,.7);font-weight:500">Home Refresh</th>
-              <th style="padding:12px 8px;border-bottom:2px solid var(--gold);text-align:center;color:var(--gold);font-weight:600;background:rgba(196,161,90,.08)">Business Essential</th>
-              <th style="padding:12px 8px;border-bottom:1px solid rgba(255,255,255,.15);text-align:center;color:rgba(255,255,255,.7);font-weight:500">Deep Reset</th>
-            </tr>
-          </thead>
-          <tbody id="compare-body"></tbody>
-        </table>
-      </div>
+        <!-- Compare Table -->
+        <div class="compare-wrap reveal" style="margin-bottom:2.5rem">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:left">What is included</th>
+                <th>Home Refresh</th>
+                <th class="featured-col">Business Essential</th>
+                <th>Deep Reset</th>
+              </tr>
+            </thead>
+            <tbody id="compare-body"></tbody>
+          </table>
+        </div>
 
-      <div class="pricing-grid">
-        <article class="glass reveal"><h3>Home Refresh</h3><p>from <strong>R600</strong></p><ul><li>Bedrooms, kitchen, bathrooms</li><li>Dust, sanitize, finish touches</li><li>Ideal weekly/bi-weekly</li></ul><a href="#contact" class="btn btn-outline">Request Booking</a></article>
-        <article class="glass reveal delay-1 featured"><h3>Business Essential</h3><p>from <strong>R1,500</strong></p><ul><li>Workstations and common areas</li><li>Restroom hygiene standard</li><li>Supervisor quality check</li></ul><a href="#contact" class="btn btn-gold">Get Commercial Quote</a></article>
-        <article class="glass reveal delay-2"><h3>Deep Reset</h3><p>custom <strong>Quote</strong></p><ul><li>Post-construction intensive clean</li><li>Windows, floors, upholstery</li><li>Move-in / move-out ready</li><li>Forensic and decontamination add-ons</li></ul><a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20deep%20reset%20quote." target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ask on WhatsApp</a></article>
+        <div class="pricing-grid">
+          <article class="pcard reveal">
+            <h3>Home Refresh</h3>
+            <div class="price">from R600</div>
+            <ul>
+              <li>Bedrooms, kitchen, bathrooms</li>
+              <li>Dust, sanitize, finish touches</li>
+              <li>Eco-safe products</li>
+              <li>Ideal weekly or bi-weekly</li>
+            </ul>
+            <a href="#book" class="btn btn-outline-navy" style="width:100%;justify-content:center">Request Booking</a>
+          </article>
+          <article class="pcard featured reveal delay-1">
+            <h3>Business Essential</h3>
+            <div class="price">from R1,500</div>
+            <ul>
+              <li>Workstations and common areas</li>
+              <li>Restroom hygiene standard</li>
+              <li>Supervisor quality check</li>
+              <li>Flexible scheduling</li>
+            </ul>
+            <a href="#book" class="btn btn-primary" style="width:100%;justify-content:center">Get Commercial Quote</a>
+          </article>
+          <article class="pcard reveal delay-2">
+            <h3>Deep Reset</h3>
+            <div class="price">Custom Quote</div>
+            <ul>
+              <li>Post-construction intensive clean</li>
+              <li>Windows, floors and upholstery</li>
+              <li>Move-in / move-out ready</li>
+              <li>Forensic and decontamination add-ons</li>
+            </ul>
+            <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20deep%20reset%20quote." target="_blank" rel="noopener" class="btn btn-outline-navy" style="width:100%;justify-content:center">Ask on WhatsApp</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Blog / Cleaning Tips -->
+    <!-- BLOG -->
     <section id="blog" class="section container">
       <div class="section-heading reveal">
         <p class="eyebrow">Cleaning Tips</p>
         <h2>Advice from the Duraclean Team</h2>
         <p class="subtitle">Practical tips to keep your home and workspace cleaner between professional visits.</p>
       </div>
-      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
-        <article class="card glass reveal delay-1" style="cursor:default">
-          <div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0M12 8v4l3 3"/></svg></div>
-          <p class="eyebrow" style="margin-bottom:.4rem">Humidity &amp; Mould</p>
-          <h3>Fighting Mould in Durban&rsquo;s Humid Climate</h3>
-          <p>Durban&rsquo;s coastal humidity creates ideal mould conditions. Wipe bathroom tiles weekly with a white vinegar solution (1:1 with water), keep windows open for 20 minutes after showers, and check behind furniture against exterior walls monthly. Catch it early &mdash; mould spreads fast in KZN summers.</p>
+      <div class="blog-cards">
+        <article class="bcard reveal delay-1">
+          <div class="bcard-body">
+            <p class="eyebrow">Humidity &amp; Mould</p>
+            <h3>Fighting Mould in Durban's Humid Climate</h3>
+            <p>Durban's coastal humidity creates ideal mould conditions. Wipe bathroom tiles weekly with a white vinegar solution, keep windows open for 20 minutes after showers, and check behind furniture against exterior walls monthly.</p>
+          </div>
         </article>
-        <article class="card glass reveal delay-2" style="cursor:default">
-          <div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6zM9 12h6M12 9v6"/></svg></div>
-          <p class="eyebrow" style="margin-bottom:.4rem">Post-Construction</p>
-          <h3>Your Post-Renovation Cleaning Checklist</h3>
-          <p>After any building work: seal vents before sweeping to stop dust resettling. Vacuum all surfaces top-down, starting with ceiling fans before you touch the floors. Wipe walls with a damp microfibre before any painting touch-ups. Clean window tracks and frames last because they trap the most grit. For heavy jobs, give us a call.</p>
+        <article class="bcard reveal delay-2">
+          <div class="bcard-body">
+            <p class="eyebrow">Post-Construction</p>
+            <h3>Your Post-Renovation Cleaning Checklist</h3>
+            <p>After any building work: seal vents before sweeping to stop dust resettling. Vacuum all surfaces top-down starting with ceiling fans before floors. Clean window tracks and frames last because they trap the most grit.</p>
+          </div>
         </article>
-        <article class="card glass reveal delay-3" style="cursor:default">
-          <div class="icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22h16M6 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17M9 8h6M9 12h6M9 16h4"/></svg></div>
-          <p class="eyebrow" style="margin-bottom:.4rem">Office Hygiene</p>
-          <h3>5 Office Spots Most Cleaners Miss</h3>
-          <p>Keyboard trays, monitor backs, cable bundles, under-desk surfaces and the bottom edge of office chairs collect dust and bacteria that routine cleaning skips right past. Disinfect keyboards monthly and wipe down cables quarterly. A cleaner office genuinely reduces sick days. Workplaces with regular deep cleans see noticeably fewer illness-related absences, and your team feels the difference.</p>
+        <article class="bcard reveal delay-3">
+          <div class="bcard-body">
+            <p class="eyebrow">Office Hygiene</p>
+            <h3>5 Office Spots Most Cleaners Miss</h3>
+            <p>Keyboard trays, monitor backs, cable bundles, under-desk surfaces and the bottom edge of office chairs collect dust and bacteria that routine cleaning skips. Disinfect keyboards monthly and wipe cables quarterly.</p>
+          </div>
         </article>
       </div>
     </section>
 
-    <!-- Booking Form -->
-    <section id="book" class="section container">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Get a Quote</p>
-        <h2>Tell Us About Your Space</h2>
-        <p class="subtitle">Fill in the form and we will get back to you within a few hours, usually much sooner.</p>
-      </div>
-      <div class="glass reveal" style="max-width:640px;margin:0 auto;padding:2.5rem 2rem;border-radius:20px">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-          <div style="display:flex;flex-direction:column;gap:.4rem">
-            <label style="font-size:13px;color:rgba(255,255,255,.6)">Your name</label>
-            <input id="bk-name" type="text" placeholder="e.g. Thandi Mokoena" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none" />
-          </div>
-          <div style="display:flex;flex-direction:column;gap:.4rem">
-            <label style="font-size:13px;color:rgba(255,255,255,.6)">WhatsApp number</label>
-            <input id="bk-phone" type="tel" placeholder="+27 ..." style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none" />
-          </div>
-          <div style="display:flex;flex-direction:column;gap:.4rem">
-            <label style="font-size:13px;color:rgba(255,255,255,.6)">Suburb</label>
-            <input id="bk-area" type="text" placeholder="e.g. Umhlanga, Pinetown" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none" />
-          </div>
-          <div style="display:flex;flex-direction:column;gap:.4rem">
-            <label style="font-size:13px;color:rgba(255,255,255,.6)">Preferred date</label>
-            <input id="bk-date" type="date" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;color-scheme:dark" />
-          </div>
-          <div style="display:flex;flex-direction:column;gap:.4rem;grid-column:1/-1">
-            <label style="font-size:13px;color:rgba(255,255,255,.6)">Service needed</label>
-            <select id="bk-service" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;appearance:none;color-scheme:dark">
-              <option value="">Select a service...</option>
-              <option>Home Deep Clean</option>
-              <option>Commercial / Office Cleaning</option>
-              <option>Post-Construction Clean</option>
-              <option>Move In / Move Out</option>
-              <option>Garden Refuse Removal</option>
-              <option>Grass Cutting</option>
-              <option>Pre / Post Event Clean</option>
-              <option>Decontamination / Forensic</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:.4rem;grid-column:1/-1">
-            <label style="font-size:13px;color:rgba(255,255,255,.6)">Anything else we should know? <span style="opacity:.5">(optional)</span></label>
-            <textarea id="bk-notes" rows="3" placeholder="Size of the space, specific problem areas, access instructions..." style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;resize:vertical;font-family:inherit"></textarea>
-          </div>
+    <!-- BOOKING FORM -->
+    <section id="book" class="section section-alt">
+      <div class="container">
+        <div class="section-heading reveal center">
+          <p class="eyebrow">Get a Quote</p>
+          <h2>Tell Us About Your Space</h2>
+          <p class="subtitle">Fill in the form and we will get back to you within a few hours, usually much sooner.</p>
         </div>
-        <button onclick="submitBooking()" style="margin-top:1.5rem;width:100%;padding:14px;background:var(--gold);color:#1a1208;font-weight:700;font-size:15px;border:none;border-radius:10px;cursor:pointer;letter-spacing:.03em;transition:opacity .2s" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Send Booking Request via WhatsApp</button>
-        <p style="font-size:12px;color:rgba(255,255,255,.4);text-align:center;margin-top:.8rem">This opens WhatsApp with your details pre-filled. No app needed on desktop.</p>
+        <div class="reveal" style="max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem 2rem;box-shadow:var(--shadow-md)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="bk-name">Your name</label>
+              <input id="bk-name" type="text" placeholder="e.g. Thandi Mokoena" />
+            </div>
+            <div class="form-group">
+              <label for="bk-phone">WhatsApp number</label>
+              <input id="bk-phone" type="tel" placeholder="+27 ..." />
+            </div>
+            <div class="form-group">
+              <label for="bk-area">Suburb</label>
+              <input id="bk-area" type="text" placeholder="e.g. Umhlanga, Pinetown" />
+            </div>
+            <div class="form-group">
+              <label for="bk-date">Preferred date</label>
+              <input id="bk-date" type="date" />
+            </div>
+            <div class="form-group full">
+              <label for="bk-service">Service needed</label>
+              <select id="bk-service">
+                <option value="">Select a service...</option>
+                <option>Home Deep Clean</option>
+                <option>Commercial / Office Cleaning</option>
+                <option>Post-Construction Clean</option>
+                <option>Move In / Move Out</option>
+                <option>Garden Refuse Removal</option>
+                <option>Grass Cutting</option>
+                <option>Pre / Post Event Clean</option>
+                <option>Decontamination / Forensic</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="bk-notes">Anything else? <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+              <textarea id="bk-notes" placeholder="Size of the space, specific problem areas, access instructions..."></textarea>
+            </div>
+          </div>
+          <button onclick="submitBooking()" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1.2rem;padding:1rem;font-size:1rem">Send Booking Request via WhatsApp</button>
+          <p style="font-size:.78rem;color:var(--muted);text-align:center;margin-top:.75rem">Opens WhatsApp with your details pre-filled.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Trust Signals -->
+    <!-- TRUST + AREA -->
     <section class="section container">
       <div class="section-heading reveal">
         <p class="eyebrow">About Us</p>
         <h2>A Real Team. A Real Business.</h2>
-        <p class="subtitle">Duraclean Solutions is a registered South African cleaning company serving Durban and surrounding areas. We are fully insured, use eco-safe products, and every job is signed off by a supervisor before we leave.</p>
+        <p class="subtitle">Duraclean Solutions is a registered South African cleaning company serving Durban and surrounding areas. Fully insured, eco-safe products, every job signed off by a supervisor.</p>
       </div>
       <div class="trust-strip reveal">
         <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414A1 1 0 0 1 19 9.414V19a2 2 0 0 1-2 2z"/></svg>
-          <span>Registered Business</span>
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414A1 1 0 0 1 19 9.414V19a2 2 0 0 1-2 2z"/></svg>
+          <span>CIPC Registered Business</span>
         </div>
         <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <span>Fully Insured</span>
         </div>
         <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 8v4l3 3"/><path d="M8 12c0-1.5.5-3 2-4"/></svg>
-          <span>Eco-Safe Products</span>
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Supervisor Sign-Off on Every Job</span>
         </div>
         <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-          <span>Supervisor Sign-Off</span>
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
           <span>Based in Durban</span>
         </div>
         <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Always Reachable</span>
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>7 Days a Week on WhatsApp</span>
         </div>
       </div>
-
-      <!-- Service area, folded into same section so it reads as one quiet closing band -->
       <div class="area-band reveal">
         <span class="area-band-label">We cover</span>
         <span class="area-pill">Durban CBD</span>
@@ -303,78 +408,36 @@
         <span class="area-pill gold-pill">Your area? Ask us</span>
       </div>
     </section>
-    <div class="container footer-grid">
-      <div><h2>Duraclean Solutions</h2><p>Luxury-level cleaning for homes, offices, schools, and retail spaces across Durban.</p></div>
-      <div><h4>Fast Contact</h4><p>WhatsApp: <a href="https://wa.me/27704844283" style="color:var(--gold)">+27 70 484 4283</a><br/>Phone: +27 70 484 4283</p></div>
-      <div><h4>Book Today</h4><p>Tell us your area, property type, and preferred date. We&rsquo;ll confirm quickly.</p><p style="margin-top:.8rem"><a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20cleaning%20quote." target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="font-size:.9rem">WhatsApp Us Now</a></p></div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Dura<span>clean</span> Solutions</h2>
+          <p>Premium cleaning for homes, offices, schools, and retail spaces across Durban and surrounding areas.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>WhatsApp: <a href="https://wa.me/27704844283">+27 70 484 4283</a><br>Phone: +27 70 484 4283<br>7 days a week</p>
+        </div>
+        <div>
+          <h4>Book a Clean</h4>
+          <p style="margin-bottom:1rem">Tell us your area, property type and preferred date. We confirm quickly.</p>
+          <a href="https://wa.me/27704844283?text=Hi%20Duraclean%2C%20I%20need%20a%20cleaning%20quote." target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Us Now</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Duraclean Solutions. All rights reserved.</p>
+        <p>Durban, KwaZulu-Natal, South Africa</p>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Booking form -> WhatsApp
-    function submitBooking() {
-      var name    = document.getElementById('bk-name').value.trim();
-      var phone   = document.getElementById('bk-phone').value.trim();
-      var area    = document.getElementById('bk-area').value.trim();
-      var date    = document.getElementById('bk-date').value;
-      var service = document.getElementById('bk-service').value;
-      var notes   = document.getElementById('bk-notes').value.trim();
-      if (!name || !service) {
-        alert('Please fill in at least your name and the service you need.');
-        return;
-      }
-      var msg = 'Hi Duraclean! I would like to book a clean.\n\n'
-        + 'Name: ' + name + '\n'
-        + (phone   ? 'Phone: ' + phone + '\n' : '')
-        + (area    ? 'Area: ' + area + '\n' : '')
-        + (service ? 'Service: ' + service + '\n' : '')
-        + (date    ? 'Preferred date: ' + date + '\n' : '')
-        + (notes   ? 'Notes: ' + notes : '');
-      window.open('https://wa.me/27704844283?text=' + encodeURIComponent(msg), '_blank');
-    }
-    function toggleWA() {
-      var popup = document.getElementById('wa-popup');
-      popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
-    }
-    // Open bubble after 4 seconds on first visit
-    setTimeout(function() {
-      if (!sessionStorage.getItem('wa-shown')) {
-        document.getElementById('wa-popup').style.display = 'block';
-        sessionStorage.setItem('wa-shown', '1');
-      }
-    }, 4000);
-
-    // Pricing comparison table
-    var rows = [
-      ['Bedrooms &amp; living areas', '&#10003;', '&#10003;', '&#10003;'],
-      ['Kitchen &amp; bathrooms', '&#10003;', '&#10003;', '&#10003;'],
-      ['Workstations &amp; common areas', '&ndash;', '&#10003;', '&#10003;'],
-      ['Restroom hygiene standard', '&ndash;', '&#10003;', '&#10003;'],
-      ['Supervisor quality check', '&ndash;', '&#10003;', '&#10003;'],
-      ['Windows, floors &amp; upholstery', '&ndash;', '&ndash;', '&#10003;'],
-      ['Post-construction intensive', '&ndash;', '&ndash;', '&#10003;'],
-      ['Forensic / decontamination add-on', '&ndash;', '&ndash;', '&#10003;'],
-      ['Eco-safe products', '&#10003;', '&#10003;', '&#10003;'],
-      ['Starting price', 'R600', 'R1,500', 'Custom'],
-    ];
-    var tbody = document.getElementById('compare-body');
-    if (tbody) {
-      rows.forEach(function(r, i) {
-        var tr = document.createElement('tr');
-        tr.style.borderBottom = '1px solid rgba(255,255,255,.07)';
-        r.forEach(function(cell, ci) {
-          var td = document.createElement('td');
-          td.innerHTML = cell;
-          td.style.padding = '10px ' + (ci === 0 ? '16px' : '8px');
-          td.style.textAlign = ci === 0 ? 'left' : 'center';
-          td.style.color = cell === '&#10003;' ? '#7ecb8f' : cell === '&ndash;' ? 'rgba(255,255,255,.25)' : 'rgba(255,255,255,.85)';
-          if (ci === 2) td.style.background = 'rgba(196,161,90,.06)';
-          if (ci === 0) td.style.color = 'rgba(255,255,255,.75)';
-          tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
-      });
-    }
+    // Mobile menu
     const toggle = document.querySelector('.menu-toggle');
     const panel  = document.getElementById('menuPanel');
     if (toggle && panel) {
@@ -389,39 +452,81 @@
     }
 
     // Before/After slider
-    const range      = document.querySelector('.ba-range');
-    const beforeWrap = document.querySelector('.before-wrap');
-    if (range && beforeWrap) {
-      range.addEventListener('input', e => beforeWrap.style.width = e.target.value + '%');
-    }
+    const range = document.querySelector('.ba-range');
+    const bw    = document.querySelector('.before-wrap');
+    if (range && bw) range.addEventListener('input', e => bw.style.width = e.target.value + '%');
 
-    // Scroll-triggered reveal — fixes elements staying invisible on scroll
+    // Scroll reveal
     const revealEls = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      revealEls.forEach(function(el) { observer.observe(el); });
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      revealEls.forEach(el => obs.observe(el));
     } else {
-      revealEls.forEach(function(el) { el.classList.add('visible'); });
+      revealEls.forEach(el => el.classList.add('visible'));
     }
 
-    // Parallax
-    const parallaxEls = document.querySelectorAll('[data-parallax]');
-    const onScroll = function() {
-      const y = window.scrollY;
-      parallaxEls.forEach(function(el) {
-        const speed = parseFloat(el.dataset.parallax || '0.15');
-        el.style.setProperty('--parallax-y', (y * speed) + 'px');
+    // WhatsApp bubble
+    function toggleWA() {
+      const p = document.getElementById('wa-popup');
+      p.style.display = p.style.display === 'none' ? 'block' : 'none';
+    }
+    setTimeout(() => {
+      if (!sessionStorage.getItem('wa-shown')) {
+        document.getElementById('wa-popup').style.display = 'block';
+        sessionStorage.setItem('wa-shown', '1');
+      }
+    }, 4000);
+
+    // Booking form
+    function submitBooking() {
+      var name    = document.getElementById('bk-name').value.trim();
+      var phone   = document.getElementById('bk-phone').value.trim();
+      var area    = document.getElementById('bk-area').value.trim();
+      var date    = document.getElementById('bk-date').value;
+      var service = document.getElementById('bk-service').value;
+      var notes   = document.getElementById('bk-notes').value.trim();
+      if (!name || !service) { alert('Please fill in your name and the service you need.'); return; }
+      var msg = 'Hi Duraclean! I would like to book a clean.\n\n'
+        + 'Name: ' + name + '\n'
+        + (phone   ? 'Phone: '   + phone   + '\n' : '')
+        + (area    ? 'Area: '    + area    + '\n' : '')
+        + (service ? 'Service: ' + service + '\n' : '')
+        + (date    ? 'Date: '    + date    + '\n' : '')
+        + (notes   ? 'Notes: '   + notes        : '');
+      window.open('https://wa.me/27704844283?text=' + encodeURIComponent(msg), '_blank');
+    }
+
+    // Pricing compare table
+    var rows = [
+      ['Bedrooms and living areas',        '✓', '✓', '✓'],
+      ['Kitchen and bathrooms',            '✓', '✓', '✓'],
+      ['Workstations and common areas',    '-', '✓', '✓'],
+      ['Restroom hygiene standard',        '-', '✓', '✓'],
+      ['Supervisor quality check',         '-', '✓', '✓'],
+      ['Windows, floors and upholstery',   '-', '-', '✓'],
+      ['Post-construction intensive',      '-', '-', '✓'],
+      ['Forensic / decontamination',       '-', '-', '✓'],
+      ['Eco-safe products',                '✓', '✓', '✓'],
+      ['Starting price',             'R600', 'R1,500', 'Custom'],
+    ];
+    var tbody = document.getElementById('compare-body');
+    if (tbody) {
+      rows.forEach(function(r) {
+        var tr = document.createElement('tr');
+        r.forEach(function(cell, ci) {
+          var td = document.createElement('td');
+          td.innerHTML = cell;
+          if (cell === '✓') td.className = 'check';
+          else if (cell === '-') { td.className = 'dash'; td.innerHTML = '&ndash;'; }
+          else if (ci > 0) td.className = 'price-cell';
+          if (ci === 2) td.style.background = 'rgba(200,146,42,.06)';
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
       });
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    }
   </script>
 </body>
 </html>
